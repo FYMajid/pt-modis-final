@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-  ngoding di sini
+<!-- ngoding di sini -->
 @endsection
