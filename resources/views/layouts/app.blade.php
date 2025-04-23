@@ -6,7 +6,7 @@
     @vite('resources/css/app.css')
     <title>{{$title}}</title>
 </head>
-<body class="h-full">
+<body class="h-full bg-[#212121]">
     <!-- navbar -->
      <x-navbar></x-navbar>
 

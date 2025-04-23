@@ -9,10 +9,10 @@
         <!-- Desktop Menu (hidden on mobile) -->
         <div class="hidden md:flex space-x-8 items-center">
             <a href="/" class="hover:text-gray-300">Home</a>
-            <a href="/" class="text-yellow-500 font-medium hover:text-yellow-300">News!</a>
+            <a href="/news" class="text-yellow-500 font-medium hover:text-yellow-300">News!</a>
             <a href="/about" class="hover:text-gray-300">About Us</a>
-            <a href="/" class="hover:text-gray-300">Service</a>
-            <a href="/" class="bg-yellow-500 hover:bg-yellow-600 text-black py-2 px-6 rounded-full">Contact Us</a>
+            <a href="/service" class="hover:text-gray-300">Service</a>
+            <a href="/about" class="bg-yellow-500 hover:bg-yellow-600 text-black py-2 px-6 rounded-full">Contact Us</a>
         </div>
         
         <!-- Hamburger Menu Button (visible only on mobile) -->
@@ -28,10 +28,10 @@
     <!-- Mobile Menu (hidden by default) -->
     <div id="mobile-menu" class="md:hidden hidden mt-4 flex flex-col space-y-4 pb-4 pt-2">
         <a href="/" class="block hover:text-gray-300 px-2">Home</a>
-        <a href="/" class="block text-yellow-500 font-medium hover:text-yellow-300 px-2">News!</a>
+        <a href="/news" class="block text-yellow-500 font-medium hover:text-yellow-300 px-2">News!</a>
         <a href="/about" class="block hover:text-gray-300 px-2">About Us</a>
-        <a href="/" class="block hover:text-gray-300 px-2">Service</a>
-        <a href="/" class="block bg-yellow-500 hover:bg-yellow-600 text-black py-2 px-4 rounded-full w-max mx-2">Contact Us</a>
+        <a href="/service" class="block hover:text-gray-300 px-2">Service</a>
+        <a href="/contact" class="block bg-yellow-500 hover:bg-yellow-600 text-black py-2 px-4 rounded-full w-max mx-2">Contact Us</a>
     </div>
 </nav>
 
