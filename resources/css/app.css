@@ -1,2 +1,23 @@
 @import "tailwindcss";
 @source "../views";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .text-gold {
+        color: #ffd700;
+    }
+}
+
+.legalitas {
+    background-color: #212121; /* Warna latar belakang section */
+}
+.image-container {
+    position: relative;
+}
+
+body {
+    font-family: "DM Sans";
+}

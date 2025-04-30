@@ -1,4 +1,5 @@
-<nav class="bg-black text-white py-3 px-4 md:px-8">
+<nav class="bg-[#181818]/[.50] text-white py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 backdrop-blur-sm shadow-md">
+
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo dan Nama Perusahaan -->
         <a href="/" class="flex items-center space-x-2">
@@ -9,10 +10,11 @@
         <!-- Desktop Menu (hidden on mobile) -->
         <div class="hidden md:flex space-x-8 items-center">
             <a href="/" class="hover:text-gray-300">Home</a>
-            <a href="/news" class="text-yellow-500 font-medium hover:text-yellow-300">News!</a>
+            <a href="/news" class="text-yellow-500 font-fredoka hover:text-yellow-300">News!</a>
             <a href="/about" class="hover:text-gray-300">About Us</a>
             <a href="/service" class="hover:text-gray-300">Service</a>
-            <a href="/about" class="bg-yellow-500 hover:bg-yellow-600 text-black py-2 px-6 rounded-full">Contact Us</a>
+            <a href="/career" class="hover:text-gray-300">Career</a>
+            <a href="/contact" class="bg-gradient-to-br from-[#ECC543] to-[#F3DB9F] hover:bg-yellow-600 text-black py-2 px-6 rounded-full">Contact Us</a>
         </div>
         
         <!-- Hamburger Menu Button (visible only on mobile) -->
@@ -28,10 +30,11 @@
     <!-- Mobile Menu (hidden by default) -->
     <div id="mobile-menu" class="md:hidden hidden mt-4 flex flex-col space-y-4 pb-4 pt-2">
         <a href="/" class="block hover:text-gray-300 px-2">Home</a>
-        <a href="/news" class="block text-yellow-500 font-medium hover:text-yellow-300 px-2">News!</a>
+        <a href="/news" class="block text-yellow-500 hover:text-yellow-300 px-2">News!</a>
         <a href="/about" class="block hover:text-gray-300 px-2">About Us</a>
         <a href="/service" class="block hover:text-gray-300 px-2">Service</a>
-        <a href="/contact" class="block bg-yellow-500 hover:bg-yellow-600 text-black py-2 px-4 rounded-full w-max mx-2">Contact Us</a>
+        <a href="/career" class="block hover:text-gray-300 px-2">Career</a>
+        <a href="/contact" class="block bg-gradient-to-br from-[#ECC543] to-[#F3DB9F] hover:bg-yellow-600 text-black py-2 px-4 rounded-full w-max mx-2">Contact Us</a>
     </div>
 </nav>
 

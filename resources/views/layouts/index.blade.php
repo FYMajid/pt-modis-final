@@ -8,7 +8,7 @@
     <!-- Vite Assets -->
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/news-manager.js'])
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 font-[DM Sans]">
     <!-- Header Section -->
     <div class="p-6 bg-white shadow-md">
         <div class="flex justify-between items-center">
@@ -26,5 +26,6 @@
     <div class="p-6">
         @yield('content') 
     </div>
+    @yield('scripts') 
 </body>
 </html>

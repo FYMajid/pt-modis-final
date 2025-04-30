@@ -3,11 +3,22 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CareerController;
+
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/dashboard', [AuthController::class, 'dashboard']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::middleware('web')->group(function () {
+    Route::get('/admin/careers', [CareerController::class, 'index']);
+    Route::get('/admin/careers/{id}', [CareerController::class, 'show']);
+    Route::post('/admin/careers', [CareerController::class, 'store']);
+    Route::put('/admin/careers/{id}', [CareerController::class, 'update']);
+    Route::delete('/admin/careers/{id}', [CareerController::class, 'destroy']);
+});
+
 
 // Admin routes - protected by auth middleware
 // In routes/web.php
@@ -24,16 +35,16 @@ Route::get('/news', [NewsController::class, 'showNews'])->name('news');
 
 
 Route::get('/', function () {
+    $hotNews = \App\Models\News::where('type', 'hot')
+        ->orderBy('created_at', 'desc')
+        ->take(2)
+        ->get();
+        
     return view('welcome', [
-        'title' => 'PT MODIS | Home'
+        'title' => 'PT MODIS | Home',
+        'hotNews' => $hotNews
     ]);
 });
-
-// Route::get('/news', function () {
-//     return view('news', [
-//         'title' => 'PT MODIS | News'
-//     ]);
-// });
 
 Route::get('/about', function () {
     return view('about', [
@@ -51,5 +62,13 @@ Route::get('/service', function () {
 Route::get('/contact', function () {
     return view('contact', [
         'title' => 'PT MODIS | Kontak'
+    ]);
+});
+
+Route::get('/career', function () {
+    $careers = \App\Models\Career::latest()->get(); // Ambil data careers dari database
+    return view('career', [
+        'title' => 'PT MODIS | Career',
+        'careers' => $careers // Pass careers variable to view
     ]);
 });

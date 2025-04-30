@@ -9,6 +9,7 @@ export default defineConfig({
                 "resources/css/app.css",
                 "resources/js/app.js",
                 "resources/js/news-manager.js",
+                "resources/js/careers-manager.js",
             ],
             refresh: true,
         }),

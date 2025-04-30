@@ -1,0 +1,207 @@
+// File: resources/js/career-manager.js
+export function careerManager() {
+    return {
+        showModal: false,
+        showEditModal: false,
+        currentCareer: null,
+        formData: {
+            id: null,
+            position: "",
+            description: "",
+            link: "",
+        },
+
+        // Reset form data
+        resetForm() {
+            this.formData = {
+                id: null,
+                position: "",
+                description: "",
+                link: "",
+            };
+        },
+
+        // Upload new career opportunity
+        async uploadCareer() {
+            try {
+                const response = await fetch("/admin/careers", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRF-TOKEN": document
+                            .querySelector('meta[name="csrf-token"]')
+                            .getAttribute("content"),
+                    },
+                    body: JSON.stringify(this.formData),
+                });
+
+                // Check if response is JSON before parsing
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.includes("application/json")) {
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        notify(data.message);
+                        window.location.reload();
+                    } else {
+                        notify(data.message || "An error occurred", "error");
+                    }
+                } else {
+                    // Handle non-JSON response
+                    const text = await response.text();
+                    console.error("Server returned non-JSON response:", text);
+                    notify(
+                        "Server returned an invalid response format",
+                        "error"
+                    );
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                notify("An unexpected error occurred", "error");
+            }
+
+            this.showModal = false;
+            this.resetForm();
+        },
+
+        // Edit career opportunity
+        async editCareer(id) {
+            try {
+                const response = await fetch(`/admin/careers/${id}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRF-TOKEN": document
+                            .querySelector('meta[name="csrf-token"]')
+                            .getAttribute("content"),
+                    },
+                });
+
+                // Check if response is JSON
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.includes("application/json")) {
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        this.formData = {
+                            id: data.career.id,
+                            position: data.career.position,
+                            description: data.career.description,
+                            link: data.career.link,
+                        };
+                        this.showEditModal = true;
+                    } else {
+                        notify(
+                            data.message || "Failed to load career information",
+                            "error"
+                        );
+                    }
+                } else {
+                    // Handle non-JSON response
+                    const text = await response.text();
+                    console.error("Server returned non-JSON response:", text);
+                    notify(
+                        "Server returned an invalid response format",
+                        "error"
+                    );
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                notify("An unexpected error occurred", "error");
+            }
+        },
+
+        // Update career opportunity
+        async updateCareer() {
+            try {
+                const response = await fetch(
+                    `/admin/careers/${this.formData.id}`,
+                    {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRF-TOKEN": document
+                                .querySelector('meta[name="csrf-token"]')
+                                .getAttribute("content"),
+                        },
+                        body: JSON.stringify(this.formData),
+                    }
+                );
+
+                // Check if response is JSON
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.includes("application/json")) {
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        notify(data.message);
+                        window.location.reload();
+                    } else {
+                        notify(data.message || "An error occurred", "error");
+                    }
+                } else {
+                    // Handle non-JSON response
+                    const text = await response.text();
+                    console.error("Server returned non-JSON response:", text);
+                    notify(
+                        "Server returned an invalid response format",
+                        "error"
+                    );
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                notify("An unexpected error occurred", "error");
+            }
+
+            this.showEditModal = false;
+            this.resetForm();
+        },
+
+        // Delete career opportunity
+        async deleteCareer(id) {
+            if (
+                !confirm(
+                    "Are you sure you want to delete this career opportunity?"
+                )
+            ) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/admin/careers/${id}`, {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRF-TOKEN": document
+                            .querySelector('meta[name="csrf-token"]')
+                            .getAttribute("content"),
+                    },
+                });
+
+                // Check if response is JSON
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.includes("application/json")) {
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        notify(data.message);
+                        window.location.reload();
+                    } else {
+                        notify(data.message || "An error occurred", "error");
+                    }
+                } else {
+                    // Handle non-JSON response
+                    const text = await response.text();
+                    console.error("Server returned non-JSON response:", text);
+                    notify(
+                        "Server returned an invalid response format",
+                        "error"
+                    );
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                notify("An unexpected error occurred", "error");
+            }
+        },
+    };
+}
