@@ -22,6 +22,8 @@
         </div>
     </div>
 
+
+
     <!-- Content Section -->
     <div class="p-6">
         @yield('content') 

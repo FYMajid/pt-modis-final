@@ -47,7 +47,7 @@
             </svg>
             
             <div class="absolute inset-0 flex items-center justify-center">
-                <div class="max-w-2xl w-full relative">
+                <div class="max-w-7xl w-full relative">
                     <h2 class="text-3xl font-bold text-white text-center mb-4">Kata Pengantar</h2>
                     <div class="bg-[#292929] shadow-lg rounded-lg p-10 relative">
                         <p class="text-white mb-6">
@@ -103,7 +103,7 @@
         <div class="flex flex-col md:flex-row gap-6">
             <!-- Left Column - Certification Info -->
             <div class="md:w-2/5">
-                <div class="flex items-center mb-6">
+                <div class="flex items-center mt-45 mb-6">
                     <svg class="w-6 h-6 text-gold mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                     </svg>
@@ -218,17 +218,17 @@
                 <!-- Left Column -->
                 <div class="grid grid-rows-3 gap-4">
                     <!-- Card 1 -->
-                    <div class="bg-[#292929] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal1')">
+                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal1')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
                         <h3 class="font-bold text-[#EED66F]">SERTIFIKAT BADAN USAHA JASA PELAKSANA KONTRUKSI</h3>
                     </div>
                     <!-- Card 2 -->
-                    <div class="bg-[#292929] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal2')">
+                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal2')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
                         <h3 class="font-bold text-[#EED66F]">SERTIFIKAT ISO 14001:2015 by OCS</h3>
                     </div>
                     <!-- Card 3 -->
-                    <div class="bg-[#292929] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal3')">
+                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal3')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
                         <h3 class="font-bold text-[#EED66F]">SERTIFIKAT KEAHLIAN (SKA MADYA)</h3>
                     </div> 
@@ -236,17 +236,17 @@
                 <!-- Right Column -->
                 <div class="grid grid-rows-3 gap-4">
                     <!-- Card 4 -->
-                    <div class="bg-[#292929] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal4')">
+                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal4')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
                         <h3 class="font-bold text-[#EED66F]">SERTIFIKAT KOMPETENSI PELAKSANA PEMBANGUNAN & PEMASANGAN </h3>
                     </div>
                     <!-- Card 5 -->
-                    <div class="bg-[#292929] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal5')">
+                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal5')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
                         <h3 class="font-bold text-[#EED66F]">SERTIFIKAT KOMPETENSI</h3>
                     </div>
                     <!-- Card 6 -->
-                    <div class="bg-[#292929] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal6')">
+                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal6')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
                         <h3 class="font-bold text-[#EED66F]">SERTIFIKAT AHLI K3</h3>
                     </div>
@@ -256,7 +256,7 @@
 
         <!-- Modals -->
         <div id="modal1" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div class="bg-white p-8 rounded-lg w-1/2 relative">
+            <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
                 <h3 class="font-bold text-xl mb-4">SERTIFIKAT BADAN USAHA JASA PELAKSANA KONTRUKSI</h3>
                 <p>No. Registrasi : 0-XXXX-XX-1XX-1-XX-9XXX0XX</p>
                 <h3 class="font-bold text-xl mb-4">RINCIAN KLASIFIKASI &  KUALIFIKASI</h3>
@@ -274,7 +274,7 @@
         </div>
 
         <div id="modal2" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div class="bg-white p-8 rounded-lg w-1/2 relative">
+            <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
                 <h3 class="font-bold text-xl mb-4">SERTIFIKAT ISO 14001:2015 by OCS</h3>
                 <p>Number : XXM0XXXX4XX19OCS</p>
                 <h3 class="font-bold text-xl mb-4">SCOPE OF CERTIFICATE</h3>
@@ -295,7 +295,7 @@
         </div>
 
         <div id="modal3" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div class="bg-white p-8 rounded-lg w-1/2 relative">
+            <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
                 <h3 class="font-bold text-xl mb-4">SERTIFIKAT KEAHLIAN (SKA MADYA) </h3>
                 <h4 class="font-bold text-xl mb-4">AHLI TEKNIK TENAGA LISTRIK MADYA</h4>
                 <p style="position: relative; padding-left: 30px;">
@@ -322,7 +322,7 @@
         </div>
 
         <div id="modal4" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div class="bg-white p-8 rounded-lg w-1/2 relative">
+            <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
                 <h3 class="font-bold text-xl mb-4">SERTIFIKAT KOMPETENSI PELAKSANA PEMBANGUNAN DAN PEMASANGAN
                 PEMANFAATAN TEGANGAN RENDAH & TEGANGAN MENENGAH</h3>
                 <p>(KEMENTRIAN ENERGI & SUMBER DAYA MINERAL REPULIK INDONESIA)</p>
@@ -361,7 +361,7 @@
         </div>
 
         <div id="modal5" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div class="bg-white p-8 rounded-lg w-1/2 relative">
+            <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
                 <h3 class="font-bold text-xl mb-4">SERTIFIKAT KOMPETENSI</h3>
                 <h3 class="font-bold text-xl mb-4">MANAJEMEN ENERGI</h3>
                 <h3 class="text-xl mb-4">Kualifikasi Manajer Bangunan Gedung</h3>
@@ -398,7 +398,7 @@
         </div>
 
         <div id="modal6" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div class="bg-white p-8 rounded-lg w-1/2 relative">
+            <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
             <h3 class="font-bold text-xl mb-4">SERTIFIKAT AHLI K3</h3>
                 <p style="position: relative; padding-left: 20px;">
                     <span style="position: absolute; left: 0; top: 0;">&#8226;</span>

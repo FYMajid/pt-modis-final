@@ -1,15 +1,23 @@
 @extends('layouts.app')
-
+@section('style')
+<style>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</style>
+@endsection
 @section('content')
 
   <!-- Hero Section -->
   <section>
-   <div class="relative h-screen bg-gray-900 overflow-hidden">
+   <div class="relative h-screen pt-20 bg-gray-900 overflow-hidden">
         <!-- Background image with opacity -->
-        <div class="absolute inset-0 bg-black opacity-90">
+        <div class="absolute inset-0 bg-black ">
             <!-- Carousel background images -->
             <div class="carousel-bg active">
-                <img src="{{ asset('images/banner.jpg') }}" alt="Background 1" class="w-full h-full object-cover">
+            <img src="{{ asset('images/banner.jpg') }}" alt="Background 1"
+     class="w-[1680px] h-[739px] object-cover object-[center_20%]">
+
+
+
             </div>
             <div class="carousel-bg hidden">
                 <img src="{{ asset('storage/' . $hotNews[0]->image) }}" alt="Background 2" class="w-full h-full object-cover" >
@@ -46,13 +54,13 @@
                 <h1 class="text-4xl md:text-7xl lg:text-6xl font-plus-jakarta bg-gradient-to-br from-[#C9B172] to-[#F3DB9F] bg-clip-text text-transparent mb-6">
                     PT Amanullah Modis Mandiri
                 </h1>
-                <p class="text-white text-sm md:text-base lg:text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
+                <p class="font-jakarta-netral md:text-base lg:text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
                     Spesialis Kontraktor Mekanikal, Elektrikal, Plumbing, HVAC Yang Telah Memiliki Beragam 
                     Pengalaman Selama Paket Pekerjaan Mekanikal & Elektrikal Di Berbagai Jenis Proyek Gedung 
                     Serta Industri Antara Lain Mall, Apartemen, Gedung Kantor, Rumah Sakit, Pabrik & Gedung Hotel
                 </p>
                 
-                <a href="#" class="bg-gradient-to-br from-[#ECC543] to-[#F3DB9F] hover:bg-yellow-600 text-gray-900 font-medium px-8 py-3 rounded-full transition duration-300">
+                <a href="#jasa" class="bg-gradient-to-br from-[#ECC543] to-[#F3DB9F] hover:bg-yellow-600 text-gray-900 font-medium px-8 py-3 rounded-full transition duration-300">
                     Discover our Services
                 </a>
             </div>
@@ -60,10 +68,10 @@
             <!-- Slide 2 - Hot News 1 -->
             @if(isset($hotNews) && count($hotNews) > 0)
             <div class="carousel-slide text-center max-w-4xl mx-auto hidden relative">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-br from-[#C9B172] to-[#F3DB9F] bg-clip-text text-transparent mb-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-plus-jakarta font-bold bg-gradient-to-br from-[#C9B172] to-[#F3DB9F] bg-clip-text text-transparent mb-6 pb-2">
                     {{ $hotNews[0]->judul }}
                 </h1>
-                <p class="text-white text-sm md:text-base lg:text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
+                <p class="font-jakarta-netral md:text-base lg:text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
                     {{ Str::limit($hotNews[0]->deskripsi, 200) }}
                 </p>
                 
@@ -76,10 +84,10 @@
             <!-- Slide 3 - Hot News 2 -->
             @if(isset($hotNews) && count($hotNews) > 1)
             <div class="carousel-slide text-center max-w-4xl mx-auto hidden">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-br from-[#C9B172] to-[#F3DB9F] bg-clip-text text-transparent mb-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-plus-jakarta font-bold bg-gradient-to-br from-[#C9B172] to-[#F3DB9F] bg-clip-text text-transparent mb-6 pb-2">
                     {{ $hotNews[1]->judul }}
                 </h1>
-                <p class="text-white text-sm md:text-base lg:text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
+                <p class="font-jakarta-netral md:text-base lg:text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
                     {{ Str::limit($hotNews[1]->deskripsi, 200) }}
                 </p>
                 
@@ -110,20 +118,26 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="flex flex-col md:flex-row">
                     <!-- Left column: Image -->
-                    <div class="w-full md:w-1/2 mb-8 md:mb-0">
-                        <img src="{{asset('images/about.png')}}" alt="Office Building" class="w-full max-w-md h-full object-cover rounded-lg shadow-lg ml-auto mr-auto">
-                    </div>
+                    <div class="w-full pl-20 mr-8 md:w-1/2 mb-8 md:mb-0">
+                    <img src="{{asset('images/about.png')}}" alt="Office Building"
+                        class="w-full h-auto object-cover rounded-lg shadow-lg ml-auto mr-auto">
+                </div>
+
                     
                     <!-- Right column: Content -->
-                    <div class="w-full md:w-1/2  md:pr-35 flex flex-col justify-center">
-                    <h2 class="text-4xl font-plusjakarta font-bold text-[#C9B172] drop-shadow-lg">PT Amanullah Modis Mandiri</h2>
+                    <div class="w-full md:w-3/4 md:pr-35 flex flex-col justify-center ">
+                    <h2 class="font-plus-jakarta  drop-shadow-lg mb-8">
+                        PT Amanullah Modis Mandiri
+                    </h2>
 
-                        <p class="text-white font-plusjakarta mb-6 text-justify">
-                            Terbentuk sejak tahun 2015, dengan berbadan hukum resmi yang bergerak pada penyedia barang & Jasa Kontraktor. Kami merupakan perusahaan berkembang & siap bersaing dengan perusahaan-perusahaan yang bergerak pada bidang yang sama.
-                        </p>
-                        <p class="text-white font-plusjakarta mb-6 text-justify">
-                            Kami mengedepankan teknologi baru serta kemampuan personil baik team perencanaan serta team implementasi di lapangan yang berfokus pada target & kualitas. Melengkapi para pekerja dengan peralatan, pengalaman serta pengetahuan dalam bidangnya yang akan menjadikannya sesuai dengan standar kualitas yang diharapkan oleh setiap klien.
-                        </p>
+                    <p class="font-jakarta-netral mb-8 text-justify">
+                        Terbentuk sejak tahun 2015, dengan berbadan hukum resmi yang bergerak pada penyedia barang & Jasa Kontraktor. Kami merupakan perusahaan berkembang & siap bersaing dengan perusahaan-perusahaan yang bergerak pada bidang yang sama.
+                    </p>
+
+                    <p class="font-jakarta-netral mb-6 text-justify">
+                        Kami mengedepankan teknologi baru serta kemampuan personil baik team perencanaan serta team implementasi di lapangan yang berfokus pada target & kualitas. Melengkapi para pekerja dengan peralatan, pengalaman serta pengetahuan dalam bidangnya yang akan menjadikannya sesuai dengan standar kualitas yang diharapkan oleh setiap klien.
+                    </p>
+
                     </div>
                 </div>
             </div>
@@ -132,13 +146,13 @@
 
     <!-- jasa & produk section -->
 
-    <section>
+    <section id=jasa>
     <div class="container mx-auto px-8 py-12">
       <div class="px-35">
-        <h1 class="text-4xl font-plusjakarta font-bold mb-6 text-white">Jasa <span class="text-[#F3DB9F]">&</span> Produk</h1>
+        <h1 class="text-4xl font-jakarta-semi mb-6 ">Jasa <span class="text-[#F3DB9F]">&</span> Produk</h1>
         
         <div class="mb-14">
-            <p class="text-white font-plusjakarta mb-2 max-w-2xl">
+            <p class="font-jakarta-semi-netral mb-2 max-w-2xl">
                 Ruang lingkup pekerjaan kami adalah segala sesuatu yang berhubungan dengan 
                 kelistrikan perusahaan anda. Seluruh produk yang kami sediakan, adalah produk
                 dengan kualitas terbaik, selalu menyesuaikan kebutuhan & kepuasan mitra kami.
@@ -194,12 +208,12 @@
 
                             <!-- Gambar layanan kanan bawah (layanan2), nongol keluar setengah -->
                             <img src="{{ asset('images/layanan2.png') }}" alt="Layanan 1"
-                                class="absolute bottom-0 right-0 w-24 h-24 md:w-32 md:h-32 object-cover rounded-xl transform translate-x-1/2 translate-y-1/2">
+                                class="absolute bottom-10 right-0 w-24 h-24 md:w-54 md:h-84 object-cover rounded-xl transform translate-x-1/2 translate-y-1/2">
 
 
                             <!-- Gambar layanan kiri atas (layanan1), nongol keluar setengah -->
                             <img src="{{ asset('images/layanan1.png') }}" alt="Layanan 2"
-                                class="absolute top-0 left-0 w-24 h-24 md:w-32 md:h-32 object-cover rounded-xl shadow-md -translate-x-1/2 -translate-y-1/2">
+                                class="absolute top-20 -left-6 w-24 h-24 md:w-44  md:h-55 object-cover rounded-xl shadow-md -translate-x-1/2 -translate-y-1/2">
 
                         </div>
                     </div>
@@ -236,9 +250,9 @@
 
 
 <!-- klien section -->
-<section class="bg-[#1E1E1E] py-12 px-4 md:px-8 text-white">
+<section class="bg-[#1E1E1E] py-12 px-4 md:px-8 mt-25 ">
     <div class="text-center mb-10">
-    <h1 class="text-[#FFFFFF] text-4xl md:text-5xl font-plusjakarta font-bold">
+    <h1 class="font-jakarta-semi text-4xl md:text-5xl">
   Klien Kami di Berbagai Daerah 
   <span style="background: linear-gradient(to bottom, #FBF09A, #83672B); -webkit-background-clip: text; color: transparent;">Seluruh</span> 
   <span style="background: linear-gradient(to top, #FBF09A, #83672B); -webkit-background-clip: text; color: transparent;">Indonesia</span>
@@ -249,11 +263,14 @@
     </div>
 
     <!-- Gambar Peta Full -->
-    <div class="flex justify-center mb-10">
-        <img src="{{ asset('images/peta.png') }}" alt="Peta Sebaran Klien" class="max-w-full h-auto">
-    </div>
+    <!-- Gambar Peta Full -->
+<div class="flex justify-center mb-10">
+    <img src="{{ asset('images/peta.png') }}" alt="Peta Sebaran Klien"
+         class="w-full max-w-9xl h-auto">
+</div>
+
     <div class="text-center mb-10">
-    <h1 class="text-4xl md:text-5xl font-plusjakarta font-bold">
+    <h1 class="text-4xl md:text-5xl font-jakarta-semi">
         <span style="background: linear-gradient(to bottom, #C3AF82, #C39F26); -webkit-background-clip: text; color: transparent;">Klien</span> Kami
     </h1>
 </div>
