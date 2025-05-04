@@ -4,7 +4,7 @@
     
 </style>
 @endsection
-<nav class="bg-[#181818]/[.50] text-white py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 backdrop-blur-sm shadow-md">
+<nav class="bg-[#181818]/[.90] text-white py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 backdrop-blur-sm shadow-md">
 
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo dan Nama Perusahaan -->

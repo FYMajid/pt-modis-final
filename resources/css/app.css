@@ -4,10 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Fredoka+One&family=DM+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 @layer utilities {
     .text-gold {
-        color: #ffd700;
+        color: #f3db9f;
     }
 }
 
@@ -27,11 +28,42 @@
     -webkit-text-fill-color: transparent;
 }
 
+.font-jakarta {
+    font-weight: 700;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.font-jakarta-b {
+    font-weight: 200;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.font-jakarta-500 {
+    font-weight: 500;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
 .font-plus-jakarta {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 700;
     font-size: 42px;
     background: linear-gradient(to bottom, #c9b172, #f3db9f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.font-plus-jakarta-sertifikat {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    background: linear-gradient(to bottom, #c9b172, #f3db9f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.font-jakarta-legalitas {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 73px;
+    background: linear-gradient(to right, #ffffff, #c3af82);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -41,13 +73,50 @@
     font-size: 19px;
     color: #ffffff;
 }
-
+.font-jakarta-netral-legal {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    color: #ffffff;
+}
+.font-jakarta-netral-pengantar {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+}
+.font-jakarta-about {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: #ffffff;
+}
+.font-jakarta-sertif-card {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #ffffff;
+}
+.font-jakarta-miring {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    font-size: 21px;
+    color: #ffffff;
+    font-style: italic;
+}
+.font-jakarta-kecil {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #ffffff;
+}
+/* 
 .font-jakarta {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 700;
     font-size: 30px;
     color: #f3db9f;
-}
+} */
 
 .font-jakarta-semi-netral {
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -60,4 +129,55 @@
     font-weight: 700;
     font-size: 42px;
     color: #ffffff;
+}
+.font-semi-jakarta {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #ffffff;
+}
+.font-semi-visi {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
+    font-style: bold;
+}
+.font-jakarta-card-6 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    color: #ffffff;
+}
+
+.font-legalitas {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #f3db9f;
+}
+.font-legalitas-number {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.font-dm-sans {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    /* font-size: 42px; */
+    /* color: #ffffff; */
+}
+
+.font-dm {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    /* color: #ffffff; */
+}
+.font-dm-line {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 42px;
 }

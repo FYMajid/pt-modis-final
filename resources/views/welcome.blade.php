@@ -1,8 +1,82 @@
 @extends('layouts.app')
 @section('style')
-<style>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+    
+        @media screen and (max-width: 768px) {
+
+            .about-container{
+                display: flex;
+                flex-direction: column;
+            }
+            .about-container .content-image{
+                align-items: center;
+                justify-content: center;
+            }
+            .about-container .content-image .image-wrap{
+                padding-left: 0;
+                margin-left: 0;
+            }
+
+            .jasa-container{
+                padding: 0;
+                margin: 0;
+            }
+            .jasa-container .jasa-text{
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mengapa-section svg{
+                top:100px;
+            }
+
+            .image-kanan-b{
+                height: 180px;
+            }
+
+            .image-kiri-a{
+                top: 30px;
+                height: 115px;
+            }
+        }
+
+
+        @media screen and (max-width: 680px) {
+            .image-wrap img {
+                width: 400px;
+                height: 100%;
+            }
+
+          .jasa-wrap-1 div h2{
+           font-size : 25px;
+          }
+
+          .jasa-wrap-2 div h2{
+           font-size : 25px;
+          }
+
+          .container-mengapa{
+            width: 300px;
+            height: 100%;
+          }
+
+          .image-wraper{
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+          }
+
+          .image-mengapa{
+            width: 300px;
+            height: 100%;
+          }
+        }
+
+
+       
+    </style>
 @endsection
 @section('content')
 
@@ -115,10 +189,10 @@
 
     <section>
     <div class="py-16 md:py-24">
-            <div class="container mx-auto px-4 md:px-6">
-                <div class="flex flex-col md:flex-row">
+            <div class="container mx-auto px-4 md:px-6 about-container">
+                <div class="flex flex-col md:flex-row content-image">
                     <!-- Left column: Image -->
-                    <div class="w-full pl-20 mr-8 md:w-1/2 mb-8 md:mb-0">
+                    <div class="w-full pl-20 mr-8 md:w-1/2 mb-8 md:mb-0 image-wrap">
                     <img src="{{asset('images/about.png')}}" alt="Office Building"
                         class="w-full h-auto object-cover rounded-lg shadow-lg ml-auto mr-auto">
                 </div>
@@ -148,10 +222,10 @@
 
     <section id=jasa>
     <div class="container mx-auto px-8 py-12">
-      <div class="px-35">
+      <div class="px-35 jasa-container">
         <h1 class="text-4xl font-jakarta-semi mb-6 ">Jasa <span class="text-[#F3DB9F]">&</span> Produk</h1>
         
-        <div class="mb-14">
+        <div class="mb-14 jasa-text">
             <p class="font-jakarta-semi-netral mb-2 max-w-2xl">
                 Ruang lingkup pekerjaan kami adalah segala sesuatu yang berhubungan dengan 
                 kelistrikan perusahaan anda. Seluruh produk yang kami sediakan, adalah produk
@@ -162,17 +236,17 @@
         
         <div class="flex flex-wrap gap-8 justify-center">
             <!-- Card 1 - Elektrikal & Mekanikal -->
-            <div class="relative overflow-hidden rounded-lg w-[562px] h-[288px]">
+            <div class="relative overflow-hidden rounded-lg w-[562px] h-[288px] jasa-wrap-1">
                 <div class="absolute inset-0 bg-black-100 flex items-center justify-center z-10">
-                    <h2 class="text-2xl font-bold text-[#C9B172]">ELEKTRIKAL & MEKANIKAL</h2>
+                    <h2 class="text-[36px] font-dm-sans text-[#C9B172]">ELEKTRIKAL & MEKANIKAL</h2>
                 </div>
                 <img src="{{ asset('images/elektrikal.jpg') }}" alt="Elektrikal & Mekanikal" class="object-cover w-full h-full brightness-50", style="object-position: center 35%;">
             </div>
             
             <!-- Card 2 - Teknik & Rekayasa Sipil -->
-            <div class="relative overflow-hidden rounded-lg w-[562px] h-[288px]">
+            <div class="relative overflow-hidden rounded-lg w-[562px] h-[288px] jasa-wrap-2">
                 <div class="absolute inset-0 bg-black-100 flex items-center justify-center z-10">
-                    <h2 class="font-dm-sans text-2xl font-bold text-[#C9B172]">TEKNIK & REKAYASA SIPIL</h2>
+                    <h2 class="text-[36px] font-dm-sans text-[#C9B172]">TEKNIK & REKAYASA SIPIL</h2>
                 </div>
                 <img src="{{ asset('images/sipil.png') }}" alt="Teknik & Rekayasa Sipil" class="object-cover ob w-full h-full brightness-50" style="object-position: center 35%;">
             </div>
@@ -181,7 +255,7 @@
 
     <!-- mengapa section -->
     <section>
-    <div class="relative">
+    <div class="relative mengapa-section">
         <!-- SVG Background -->
         <svg viewBox="0 0 1280 755" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-full h-auto">
             <rect width="1280" height="755" fill="url(#paint0_linear_2477_12)"/>
@@ -199,21 +273,21 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="flex flex-col md:flex-row items-center">
                     <!-- Left column: Image -->
-                    <div class="w-full md:w-1/2 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-full md:w-1/2 mb-8 md:mb-0 flex justify-center container-mengapa">
                         <!-- Wrapper container for relative positioning -->
-                        <div class="relative max-w-md w-full">
+                        <div class="relative max-w-md w-full image-wraper">
                             <!-- Gambar utama -->
                             <img src="{{ asset('images/mengapa.png') }}" alt="Mengapa Kami"
-                                class="w-full h-full object-cover rounded-xl shadow-2xl">
+                                class="w-full h-full object-cover rounded-xl shadow-2xl image-mengapa">
 
                             <!-- Gambar layanan kanan bawah (layanan2), nongol keluar setengah -->
                             <img src="{{ asset('images/layanan2.png') }}" alt="Layanan 1"
-                                class="absolute bottom-10 right-0 w-24 h-24 md:w-54 md:h-84 object-cover rounded-xl transform translate-x-1/2 translate-y-1/2">
+                                class="absolute bottom-10 right-0 w-24 h-24 md:w-54 md:h-84 object-cover rounded-xl transform translate-x-1/2 translate-y-1/2 image-kanan-b">
 
 
                             <!-- Gambar layanan kiri atas (layanan1), nongol keluar setengah -->
                             <img src="{{ asset('images/layanan1.png') }}" alt="Layanan 2"
-                                class="absolute top-20 -left-6 w-24 h-24 md:w-44  md:h-55 object-cover rounded-xl shadow-md -translate-x-1/2 -translate-y-1/2">
+                                class="absolute top-20 -left-6 w-24 h-24 md:w-46  md:h-55 object-cover rounded-xl -translate-x-1/2 -translate-y-1/2 image-kiri-a">
 
                         </div>
                     </div>

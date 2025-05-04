@@ -1,8 +1,325 @@
 @extends('layouts.app')
 
+@section('style')
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+     
+    .custom{
+            margin-top: 7rem;
+        }
+        .color{
+            color: #525252;
+        }
+        
+        
+
+/* Laptop (1024px) */
+@media (max-width: 1024px) {
+    /* Hero Section */
+    .hero-section .max-w-5xl {
+        max-width: 90%;
+    }
+    
+    .hero-section .text-4xl.md\:text-5xl.lg\:text-6xl {
+        font-size: 3rem;
+    }
+    
+    /* Kata Pengantar */
+    .kata-pengantar .max-w-5xl {
+        max-width: 90%;
+        padding: 0 2rem;
+    }
+    
+    /* Legalitas */
+    .text-\[73px\] {
+        font-size: 3.5rem;
+    }
+    
+    /* YouTube */
+    .text-4xl.md\:text-5xl {
+        font-size: 2.5rem;
+    }
+}
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+
+    /* Hero Section */
+    .hero-section .content-about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left:0;
+        margin-left:0;
+    }
+
+    .content-about h1{
+        font-size: 20px;
+    }
+
+    .content-about p{
+        font-size: 20px;
+    }
+
+    /* pengantar section */
+
+    .pengantar-section {
+        padding-top:10rem;
+    }
+
+    /* legalitas section */
+
+    .legalitas-section{
+        padding-top:10rem;
+    }
+
+    /* Global */
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .flex-col.md\:flex-row {
+        flex-direction: column;
+    }
+    
+    .md\:w-2\/5, .md\:w-3\/5 {
+        width: 100%;
+    }
+    
+    /* Hero */
+    .hero-section .text-4xl.md\:text-5xl.lg\:text-6xl {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section .pt-24 {
+        padding-top: 4rem;
+    }
+    
+    /* Kata Pengantar */
+    .kata-pengantar .p-10 {
+        padding: 2rem;
+    }
+    
+    .kata-pengantar .text-3xl {
+        font-size: 1.75rem;
+    }
+    
+    .kata-pengantar .h-12 {
+        height: 2rem;
+    }
+    
+    /* Legalitas */
+    .text-\[73px\] {
+        font-size: 3rem;
+    }
+    
+    .text-\[42px\] {
+        font-size: 2rem;
+    }
+    
+    /* Visi Misi */
+    .grid.grid-cols-1.md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* YouTube */
+    .min-h-screen.flex.flex-col {
+        padding: 3rem 1rem;
+    }
+    
+    .text-4xl.md\:text-5xl {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Mobile Landscape (640px) */
+@media (max-width: 640px) {
+
+    .content-about h1{
+        font-size: 20px;
+    }
+
+    .content-about p{
+        font-size: 20px;
+    }
+
+    /* pengantar section */
+
+    .pengantar-section {
+        padding-top:20rem;
+    }
+
+    /* legalitas section */
+
+    .legalitas-section{
+        padding-top:20rem;
+    }
+
+    /* Hero */
+    .hero-section .text-4xl.md\:text-5xl.lg\:text-6xl {
+        font-size: 2rem;
+    }
+    
+    .hero-section .pt-24 {
+        padding-top: 3rem;
+    }
+    
+    /* Kata Pengantar */
+    .kata-pengantar .p-10 {
+        padding: 1.5rem;
+    }
+    
+    .kata-pengantar .text-3xl {
+        font-size: 1.5rem;
+    }
+    
+    .kata-pengantar .mb-6 {
+        margin-bottom: 0.75rem;
+    }
+    
+    /* Legalitas */
+    .text-\[73px\] {
+        font-size: 2.5rem;
+    }
+    
+    .bg-\[\#515151\].p-6 {
+        padding: 1rem;
+    }
+    
+    /* Modals */
+    .modal.bg-white.p-8.rounded-lg.w-1\/2 {
+        width: 90%;
+        padding: 1.5rem;
+    }
+    
+    .text-xl {
+        font-size: 1.125rem;
+    }
+}
+
+/* Mobile Portrait (480px) */
+@media (max-width: 480px) {
+
+    /* pengantar section */
+
+    .pengantar-section {
+        padding-top:25rem;
+    }
+
+    /* legalitas section */
+
+    .legalitas-section{
+        padding-top:32rem;
+    }
+
+    .legalitas-section h1{
+        font-size: 50px;
+    }    
+
+    /* Hero */
+    .hero-section .text-4xl.md\:text-5xl.lg\:text-6xl {
+        font-size: 1.75rem;
+    }
+    
+    .hero-section .px-6 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .hero-section .text-sm.md\:text-base.lg\:text-lg {
+        font-size: 0.875rem;
+    }
+    
+    /* Kata Pengantar */
+    .kata-pengantar .p-10 {
+        padding: 1.25rem;
+    }
+    
+    .kata-pengantar .h-12 {
+        height: 1.5rem;
+    }
+    
+    .kata-pengantar .text-white.mb-6 {
+        font-size: 0.875rem;
+    }
+    
+    /* Legalitas */
+    .text-\[73px\] {
+        font-size: 2rem;
+    }
+    
+    /* YouTube */
+    .text-4xl.md\:text-5xl {
+        font-size: 1.75rem;
+    }
+    
+    .inline-flex.items-center.px-8.py-3 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+/* ===== SECTION-SPECIFIC FIXES ===== */
+
+/* Kata Pengantar Section Spacing */
+@media (min-width: 769px) {
+    section:nth-of-type(2) { /* Kata Pengantar */
+        padding: 5rem 0;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section:nth-of-type(2) {
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Legalitas Logo Alignment */
+@media (max-width: 640px) {
+    .legalitas .flex.items-center {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .legalitas .mr-4 {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Sertifikasi Cards */
+@media (max-width: 640px) {
+    .sertifikasi .p-6 {
+        padding: 1rem;
+    }
+    
+    .sertifikasi .w-16 {
+        width: 2.5rem;
+    }
+}
+
+/* Visi Misi Cards */
+@media (max-width: 480px) {
+    .visi .p-6 {
+        padding: 1rem;
+    }
+    
+    .visi svg {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+    </style>
+@endsection
+
+
 @section('content')
    <!-- Hero Section -->
-   <section>
+   <section class="hero-section">
     <div class="relative h-screen bg-gray-900 overflow-hidden">
             <!-- Background image dengan opacity -->
             <div class="absolute inset-0 bg-black opacity-60">
@@ -10,14 +327,14 @@
                 <img src="{{ asset('images/about.png') }}" alt="Background" class="w-full h-full object-cover">
             </div>
             <!-- Main Content -->
-            <div class="relative z-10 flex flex-col items-start justify-start h-full px-4 md:px-8">
-    <div class="text-left max-w-4xl mx-auto mt-12 ml-8"> <!-- Menambahkan margin-top dan margin-left -->
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-plusjakarta font-bold text-[#C9B172] mb-6">
+            <div class="relative z-10 flex flex-col items-start justify-start h-full px-4 md:px-30">
+    <div class="text-left max-w-4xl mx-auto mt-30 ml-40 content-about"> <!-- Menambahkan margin-top dan margin-left -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-plus-jakarta mb-6">
             PT Amanullah Modis Mandiri
         </h1>
-        <p class="text-white text-sm md:text-base lg:text-lg mb-10 max-w-3xl mx-auto leading-relaxed font-plusjakarta">
+        <p class="text-[25px] md:text-[25px] lg:text-[25px] mx-auto leading-relaxed font-jakarta-b text-white text-justify">
             Terbentuk sejak tahun 2015, dengan berbadan hukum resmi yang bergerak pada penyedia barang & Jasa Kontraktor. 
-            Kami merupakan perusahaan berkembang & siap bersaing dengan perusahaan-perusahaan yang bergerak pada bidang yang sama.
+            Kami merupakan perusahaan berkembang & siap bersaing dengan perusahaan-perusahaan yang bergerak pada bidang yang sama. <br> <br>
             Kami mengedepankan teknologi baru serta kemampuan personil baik team perencanaan & team Implementasi di lapangan yang berfokus pada target dan kualitas.
             Melengkapi para pekerja dengan peralatan, pengalaman serta pengetahuan dalam bidangnya yang akan menjadikannya sesuai dengan standar kualitas yang di harapkan oleh setiap klien.
         </p>
@@ -26,14 +343,14 @@
 
             
             <!-- V-shaped SVG at bottom -->
-            <div class="absolute -bottom-1 left-0 w-full">
+            <div class="absolute -bottom-20 left-0 w-full">
         <img src="{{ asset('images/svg/aboutFrame.svg') }}" alt="gambar svg" class="w-full h-full">
             </div>
         </div>
     </section>
 
     <!-- KATA PENGANTAR SECTION -->
-    <section>
+    <section style="sans-serif !important">
         <div class="relative">
             <!-- SVG Background -->
             <svg width="100%" height="100%" viewBox="0 0 1281 718" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,33 +363,33 @@
                 </defs>
             </svg>
             
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="max-w-7xl w-full relative">
-                    <h2 class="text-3xl font-bold text-white text-center mb-4">Kata Pengantar</h2>
+            <div class="absolute inset-0 flex items-center justify-center pengantar-section">
+                <div class="max-w-7xl max-h-7xl w-full relative">
+                    <h2 class="text-3xl font-jakarta-semi text-left mb-4">Kata Pengantar</h2>
                     <div class="bg-[#292929] shadow-lg rounded-lg p-10 relative">
-                        <p class="text-white mb-6">
+                        <p class="font-jakarta-netral mb-6">
                             PT Amanullah Modis Mandiri adalah perusahaan yang bergerak di dalam Elektrikal Engineering, serta sedang melebarkan jaringan usaha di dalam bidang Rekayasa dan Teknik Sipil.
                         </p>
-                        <p class="text-white mb-6">
+                        <p class="font-jakarta-netral mb-6">
                             Berbekal pengalaman kami lebih dari 15 tahun, individu-individu kami siap memberikan yang terbaik. Kami menjamin pelayanan optimal di setiap lini pekerjaan yang kami tangani.
                         </p>
-                        <p class="text-white mb-6">
+                        <p class="font-jakarta-netral mb-6">
                             Profesionalisme dan ketelitian kami dalam memberikan pelayanan yang terbaik untuk Anda, adalah komitmen kami.
                         </p>
-                        <p class="text-white mb-6">
+                        <p class="font-jakarta-netral mb-6">
                             Kami ucapkan terima kasih kepada seluruh klien kami atas kepercayaan yang diberikan, dan kami berharap untuk terus dapat memberikan yang terbaik.
                         </p>
-                        <p class="text-white mb-6">
+                        <p class="font-jakarta-netral mb-6">
                             Hormat kami,
                         </p>
-                        <p class="text-white font-bold">
+                        <p class="font-jakarta-netral-pengantar">
                             PT Amanullah Modis Mandiri<br>
                             Awadh<br>
                             (Direktur Utama)
                         </p>
                         <!-- Logo di dalam card di pojok kanan bawah -->
                         <div class="absolute bottom-4 right-4">
-                            <img src="{{ asset('images/logoAbout.png') }}" alt="Logo" class="h-12">
+                            <img src="{{ asset('images/logoAbout.png') }}" alt="Logo" class="h-32 pr-9 mb-9">
                         </div>
                     </div>
                 </div>
@@ -83,10 +400,15 @@
     <!-- SECTION LEGALITAS -->
   <!-- resources/views/components/legalitas-section.blade.php -->
 <section class="text-white pb-16">
-<div class="container mx-auto px-4 py-8">
-        <!-- Header with Logo and Title -->
+<div class="container mx-auto px-4 py-8 legalitas-section">
+        
+
+        <div class="flex flex-col md:flex-row gap-6">
+            <!-- Left Column - Certification Info -->
+            <div class="md:w-2/5">
+            <!-- Header with Logo and Title -->
         <div class="flex items-center mb-8">
-            <div class="mr-4">
+            <div class="ml-8 mr-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="87" height="83" fill="none" viewBox="0 0 87 83">
                     <path fill="url(#a)" d="M43.5.875a12.81 12.81 0 0 0-12.103 8.583H4.875v8.584h8.369L.584 48.083c-2.018 8.584 4.29 12.875 15.02 12.875s17.424-4.291 15.02-12.875l-12.66-30.041h13.39c1.417 3.648 4.206 6.437 7.854 7.853v47.938H.583v8.584h85.834v-8.584H47.792v-47.98c3.648-1.374 6.437-4.163 7.81-7.811h13.433l-12.66 30.041c-2.017 8.584 4.292 12.875 15.02 12.875 10.73 0 17.425-4.291 15.022-12.875l-12.66-30.041h8.368V9.458h-26.48C53.8 4.308 48.95.875 43.5.875Zm0 8.583a4.292 4.292 0 1 1 0 8.584 4.292 4.292 0 0 1 0-8.584ZM15.604 31.99l6.438 16.093H9.167l6.437-16.093Zm55.792 0 6.437 16.093H64.958l6.438-16.093Z"/>
                         <defs>
@@ -97,109 +419,111 @@
                         </defs>
                 </svg>
             </div>
-            <h1 class="text-[73px] font-bold bg-gradient-to-r from-white to-[#C3AF82] bg-clip-text text-transparent">Legalitas</h1>
+            <h1 class="font-jakarta-legalitas">Legalitas</h1>
         </div>
-
-        <div class="flex flex-col md:flex-row gap-6">
-            <!-- Left Column - Certification Info -->
-            <div class="md:w-2/5">
-                <div class="flex items-center mt-45 mb-6">
-                    <svg class="w-6 h-6 text-gold mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                    </svg>
-                    <h2 class="text-xl font-medium">Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik</h2>
+                <div class="flex items-center mt-16 mb-6 custom">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 13V11L12 12L10 11V13L8 14L10 15V17L12 16L14 17V15L16 14M14 2H7C6.46957 2 5.96086 2.21071 5.58579 2.58579C5.21071 2.96086 5 3.46957 5 4V18C5 18.5304 5.21071 19.0391 5.58579 19.4142C5.96086 19.7893 6.46957 20 7 20H8V18H7V4H13V8H17V18H16V20H17C17.5304 20 18.0391 19.7893 18.4142 19.4142C18.7893 19.0391 19 18.5304 19 18V7M14 13V11L12 12L10 11V13L8 14L10 15V17L12 16L14 17V15L16 14M10 23L12 22L14 23V18H10M14 13V11L12 12L10 11V13L8 14L10 15V17L12 16L14 17V15L16 14L14 13Z" fill="url(#paint0_linear_98_31)"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_98_31" x1="12" y1="2" x2="12" y2="23" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#C39F26"/>
+                                <stop offset="1" stop-color="#C3AF82"/>
+                            </linearGradient>
+                        </defs>
+                </svg>
+                    <h2 class="font-jakarta-netral-legal">Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik</h2>
                 </div>
 
                 <div class="bg-[#515151] p-6 rounded">
                     <div class="mb-4">
-                        <h3 class="text-gold mb-1">No. Sertifikat</h3>
-                        <p>0XX.P.XXX.M.XB.3XXX.XX0 dan XXX.X.216.M.XX.XXX4.XX0</p>
+                        <h3 class="font-legalitas mb-1">No. Sertifikat</h3>
+                        <p class="font-legalitas-number">0XX.P.XXX.M.XB.3XXX.XX0 dan XXX.X.216.M.XX.XXX4.XX0</p>
                     </div>
 
-                    <div class="grid grid-cols-2 mb-4">
+                    <div class="grid grid-cols-2 mb-2">
                         <div>
-                            <h3 class="text-gold mb-1">No. Registrasi</h3>
-                            <p>XXX8.XX.XX0 dan X0XX.02.XXX</p>
+                            <h3 class="font-legalitas mb-1">No. Registrasi</h3>
+                            <p class="font-legalitas-number" >XXX8.XX.XX0 dan X0XX.02.XXX</p>
                         </div>
                         <div>
-                            <h3 class="text-gold mb-1">Bidang</h3>
-                            <p>Instalasi Pemanfaatan Tenaga Listrik</p>
+                            <h3 class="font-legalitas mb-1">Bidang</h3>
+                            <p class="font-legalitas-number" >Instalasi Pemanfaatan Tenaga Listrik</p>
                         </div>
                     </div>
 
                     <div>
-                        <h3 class="text-gold mb-1">SubBidang</h3>
-                        <p>Instalasi Pemanfaatan Tenaga Listrik Tegangan Menengah</p>
-                        <p>Instalasi Pemanfaatan Tenaga Listrik Tegangan Rendah</p>
-                        <p>Pembangkit Listrik Tenaga Diesel</p>
+                        <h3 class="font-legalitas mb-1">SubBidang</h3>
+                        <p class="font-legalitas-number" >Instalasi Pemanfaatan Tenaga Listrik Tegangan Menengah</p>
+                        <p class="font-legalitas-number">Instalasi Pemanfaatan Tenaga Listrik Tegangan Rendah</p>
+                        <p class="font-legalitas-number">Pembangkit Listrik Tenaga Diesel</p>
                     </div>
                 </div>
             </div>
 
             <!-- Right Column - Registration Details -->
             <div class="md:w-3/5 bg-[#2C2C2C] p-6 rounded">
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-2 gap-8">
                     <div>
-                        <h3 class="text-gold mb-1">Akta Pendirian</h3>
-                        <p>No. 27 Tanggal 21 Desember 2015</p>
+                        <h3 class="font-legalitas mb-1">Akta Pendirian</h3>
+                        <p class="font-legalitas-number">No. 27 Tanggal 21 Desember 2015</p>
                     </div>
                     <div>
-                        <h3 class="text-gold mb-1">SK Kemenkumham</h3>
-                        <p>AHU-0007839.AH.01.11.TAHUN 2016</p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-gold mb-1">Akta Perubahan</h3>
-                        <p>No. 266 Tanggal 31 Desember 2018</p>
-                    </div>
-                    <div>
-                        <h3 class="text-gold mb-1">SK Kemenkumham</h3>
-                        <p>AHU-0003583.AH.01.11.TAHUN2019</p>
+                        <h3 class="font-legalitas mb-1">SK Kemenkumham</h3>
+                        <p class="font-legalitas-number">AHU-0007839.AH.01.11.TAHUN 2016</p>
                     </div>
 
                     <div>
-                        <h3 class="text-gold mb-1">Ket. Domisili</h3>
-                        <p>152/27.1BU.1/31.74.04.1004/-071.562/e/2017</p>
+                        <h3 class="font-legalitas mb-1">Akta Perubahan</h3>
+                        <p class="font-legalitas-number">No. 266 Tanggal 31 Desember 2018</p>
                     </div>
                     <div>
-                        <h3 class="text-gold mb-1">NPWP</h3>
-                        <p>75.342.331.8-017.000</p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-gold mb-1">SP-PKP</h3>
-                        <p>S-503PKP/WPJ.30/KP.0703/2017</p>
-                    </div>
-                    <div>
-                        <h3 class="text-gold mb-1">SIUP</h3>
-                        <p>50/24.1PK/31.74.04/-1.824.27/e/2016</p>
+                        <h3 class="font-legalitas mb-1">SK Kemenkumham</h3>
+                        <p class="font-legalitas-number">AHU-0003583.AH.01.11.TAHUN2019</p>
                     </div>
 
                     <div>
-                        <h3 class="text-gold mb-1">TDP</h3>
-                        <p>2717/24.3PT/31.74/-1.824.27/e/2016</p>
+                        <h3 class="font-legalitas mb-1">Ket. Domisili</h3>
+                        <p class="font-legalitas-number">152/27.1BU.1/31.74.04.1004/-071.562/e/2017</p>
                     </div>
                     <div>
-                        <h3 class="text-gold mb-1">SIUJK</h3>
-                        <p>258/C.31/31.74.04.1005.04.005.K.3/2/-1.728/2019</p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-gold mb-1">NIB</h3>
-                        <p>9120005380051BPJS</p>
-                    </div>
-                    <div>
-                        <h3 class="text-gold mb-1">IUJPTL</h3>
-                        <p>22/AB.4.1/31.74.04.1004.04.005.K3/2/-1.824.15/2020</p>
+                        <h3 class="font-legalitas mb-1">NPWP</h3>
+                        <p class="font-legalitas-number">75.342.331.8-017.000</p>
                     </div>
 
                     <div>
-                        <h3 class="text-gold mb-1">BPJS Kesehatan</h3>
-                        <p>80067736</p>
+                        <h3 class="font-legalitas mb-1">SP-PKP</h3>
+                        <p class="font-legalitas-number">S-503PKP/WPJ.30/KP.0703/2017</p>
                     </div>
                     <div>
-                        <h3 class="text-gold mb-1">BPJS Tenaga Kerja</h3>
-                        <p>190000000740505</p>
+                        <h3 class="font-legalitas mb-1">SIUP</h3>
+                        <p class="font-legalitas-number">50/24.1PK/31.74.04/-1.824.27/e/2016</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-legalitas mb-1">TDP</h3>
+                        <p class="font-legalitas-number">2717/24.3PT/31.74/-1.824.27/e/2016</p>
+                    </div>
+                    <div>
+                        <h3 class="font-legalitas mb-1">SIUJK</h3>
+                        <p class="font-legalitas-number">258/C.31/31.74.04.1005.04.005.K.3/2/-1.728/2019</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-legalitas mb-1">NIB</h3>
+                        <p class="font-legalitas-number">9120005380051BPJS</p>
+                    </div>
+                    <div>
+                        <h3 class="font-legalitas mb-1">IUJPTL</h3>
+                        <p class="font-legalitas-number">22/AB.4.1/31.74.04.1004.04.005.K3/2/-1.824.15/2020</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-legalitas mb-1">BPJS Kesehatan</h3>
+                        <p class="font-legalitas-number">80067736</p>
+                    </div>
+                    <div>
+                        <h3 class="font-legalitas mb-1">BPJS Tenaga Kerja</h3>
+                        <p class="font-legalitas-number">190000000740505</p>
                     </div>
                 </div>
             </div>
@@ -211,44 +535,44 @@
     <section class="sertifikasi">
         <div class="container mx-auto py-10">
             <div class="text-left mb-6 px-10">
-                <h2 class="text-[42px] font-bold text-[#ECC543]">Sertifikasi & Kompetensi</h2>
+                <h2 class="font-jakarta-semi">Sertifikasi & Kompetensi</h2>
 
             </div>
             <div class="grid grid-cols-2 gap-4">
                 <!-- Left Column -->
                 <div class="grid grid-rows-3 gap-4">
                     <!-- Card 1 -->
-                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal1')">
+                    <div class="bg-[#414141] p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal1')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
-                        <h3 class="font-bold text-[#EED66F]">SERTIFIKAT BADAN USAHA JASA PELAKSANA KONTRUKSI</h3>
+                        <h3 class="font-plus-jakarta-sertifikat">SERTIFIKAT BADAN USAHA JASA PELAKSANA KONTRUKSI</h3>
                     </div>
                     <!-- Card 2 -->
-                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal2')">
+                    <div class="bg-[#414141] p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal2')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
-                        <h3 class="font-bold text-[#EED66F]">SERTIFIKAT ISO 14001:2015 by OCS</h3>
+                        <h3 class="font-plus-jakarta-sertifikat">SERTIFIKAT ISO 14001:2015 by OCS</h3>
                     </div>
                     <!-- Card 3 -->
-                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal3')">
+                    <div class="bg-[#414141] p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal3')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
-                        <h3 class="font-bold text-[#EED66F]">SERTIFIKAT KEAHLIAN (SKA MADYA)</h3>
+                        <h3 class="font-plus-jakarta-sertifikat">SERTIFIKAT KEAHLIAN (SKA MADYA)</h3>
                     </div> 
                 </div>
                 <!-- Right Column -->
                 <div class="grid grid-rows-3 gap-4">
                     <!-- Card 4 -->
-                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal4')">
+                    <div class="bg-[#414141] p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal4')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
-                        <h3 class="font-bold text-[#EED66F]">SERTIFIKAT KOMPETENSI PELAKSANA PEMBANGUNAN & PEMASANGAN </h3>
+                        <h3 class="font-plus-jakarta-sertifikat">SERTIFIKAT KOMPETENSI PELAKSANA PEMBANGUNAN & PEMASANGAN </h3>
                     </div>
                     <!-- Card 5 -->
-                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal5')">
+                    <div class="bg-[#414141] p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal5')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
-                        <h3 class="font-bold text-[#EED66F]">SERTIFIKAT KOMPETENSI</h3>
+                        <h3 class="font-plus-jakarta-sertifikat">SERTIFIKAT KOMPETENSI</h3>
                     </div>
                     <!-- Card 6 -->
-                    <div class="bg-[#414141] text-white p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal6')">
+                    <div class="bg-[#414141] p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal6')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
-                        <h3 class="font-bold text-[#EED66F]">SERTIFIKAT AHLI K3</h3>
+                        <h3 class="font-plus-jakarta-sertifikat">SERTIFIKAT AHLI K3</h3>
                     </div>
                 </div>
             </div>
@@ -257,14 +581,14 @@
         <!-- Modals -->
         <div id="modal1" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
-                <h3 class="font-bold text-xl mb-4">SERTIFIKAT BADAN USAHA JASA PELAKSANA KONTRUKSI</h3>
-                <p>No. Registrasi : 0-XXXX-XX-1XX-1-XX-9XXX0XX</p>
-                <h3 class="font-bold text-xl mb-4">RINCIAN KLASIFIKASI &  KUALIFIKASI</h3>
-                <p style="position: relative; padding-left: 20px;">
+                <h3 class="font-plus-jakarta-sertifikat mb-4">SERTIFIKAT BADAN USAHA JASA PELAKSANA KONTRUKSI</h3>
+                <p class="font-jakarta-sertif-card">No. Registrasi : 0-XXXX-XX-1XX-1-XX-9XXX0XX</p>
+                <h3 class="font-plus-jakarta-sertifikat  mb-4">RINCIAN KLASIFIKASI &  KUALIFIKASI</h3>
+                <p class="font-jakarta-sertif-card" style="position: relative; padding-left: 20px;">
                     <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
                     Jasa pelaksana konstruksi Instalasi Pembangkit Tenaga Listrik semua daya
                 </p>
-                                <p style="position: relative; padding-left: 20px;">
+                <p class="font-jakarta-sertif-card" style="position: relative; padding-left: 20px;">
                     <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
                     
                     Jasa Pelaksana Instalasi Tenaga Listrik Gedung & Pabrik
@@ -275,19 +599,19 @@
 
         <div id="modal2" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
-                <h3 class="font-bold text-xl mb-4">SERTIFIKAT ISO 14001:2015 by OCS</h3>
-                <p>Number : XXM0XXXX4XX19OCS</p>
-                <h3 class="font-bold text-xl mb-4">SCOPE OF CERTIFICATE</h3>
-                <p style="position: relative; padding-left: 20px;">
-                    <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
+                <h3 class="font-plus-jakarta-sertifikat mb-4">SERTIFIKAT ISO 14001:2015 by OCS</h3>
+                <p class="font-jakarta-sertif-card">Number : XXM0XXXX4XX19OCS</p>
+                <h3 class="font-plus-jakarta-sertifikat mb-4">SCOPE OF CERTIFICATE</h3>
+                <p class="font-jakarta-sertif-card style="position: relative; padding-left: 20px;">
+                    <span class="font-jakarta-sertif-card style="position: absolute; left: 0; top: 0;">&#8226;</span>
                     Electrical Installation
                 </p>
-                <p style="position: relative; padding-left: 20px;">
-                    <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
+                <p class="font-jakarta-sertif-card style="position: relative; padding-left: 20px;">
+                    <span class="font-jakarta-sertif-card style="position: absolute; left: 0; top: 0;">&#8226;</span>
                     Panel Maker & Electrical System
                 </p>
-                <p style="position: relative; padding-left: 20px;">
-                    <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
+                <p class="font-jakarta-sertif-card style="position: relative; padding-left: 20px;">
+                    <span class="font-jakarta-sertif-card style="position: absolute; left: 0; top: 0;">&#8226;</span>
                     Civil Engineering
                 </p>
                 <img src="{{ asset('images/close.png') }}" alt="Close" onclick="closeModal('modal2')" class="absolute top-4 right-4 w-6 cursor-pointer">
@@ -296,25 +620,25 @@
 
         <div id="modal3" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
-                <h3 class="font-bold text-xl mb-4">SERTIFIKAT KEAHLIAN (SKA MADYA) </h3>
-                <h4 class="font-bold text-xl mb-4">AHLI TEKNIK TENAGA LISTRIK MADYA</h4>
-                <p style="position: relative; padding-left: 30px;">
-                    <span style="position: absolute; left: 0; top: 0;">1.</span>MOHAMMAD ADINANDRA NAJIHAN
+                <h3 class="font-plus-jakarta-sertifikat mb-4">SERTIFIKAT KEAHLIAN (SKA MADYA) </h3>
+                <h4 class="font-semi-jakarta">AHLI TEKNIK TENAGA LISTRIK MADYA</h4>
+                <p class="font-jakarta-miring" style="position: relative; padding-left: 30px;">
+                    <span class="font-jakarta-miring" style="position: absolute; left: 0; top: 0;">1.</span>MOHAMMAD ADINANDRA NAJIHAN
                 </p>
 
-                <p style="position: relative; padding-left: 30px;">
+                <p class="font-jakarta-miring" style="position: relative; padding-left: 30px;">
                     <span style="position: absolute; left: 0; top: 0;">2.</span>MAHENDRA, ST
-                    <h3 class="font-bold text-xl mb-4">KOMPETENSI</h3>
-                <p style="position: relative; padding-left: 20px;">
-                    <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
+                    <h3 class="font-plus-jakarta-sertifikat mb-4">KOMPETENSI</h3>
+                <p class="font-jakarta-sertif-card" style="position: relative; padding-left: 20px;">
+                    <span class="font-jakarta-sertif-card" style="position: absolute; left: 0; top: 0;">&#8226;</span>
                     Instalasi pemanfaatan tenaga listrik, dengan daya sebesar-besarnya 30MVA
                 </p>
-                <p style="position: relative; padding-left: 20px;">
-                    <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
+                <p class="font-jakarta-sertif-card" style="position: relative; padding-left: 20px;">
+                    <span class="font-jakarta-sertif-card" style="position: absolute; left: 0; top: 0;">&#8226;</span>
                     Distribusi Tenaga Listrik Tegangan Rendah & Tegangan Menegah
                 </p>
-                <p style="position: relative; padding-left: 20px;">
-                    <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
+                <p class="font-jakarta-sertif-card" style="position: relative; padding-left: 20px;">
+                    <span class="font-jakarta-sertif-card" style="position: absolute; left: 0; top: 0;">&#8226;</span>
                     Pembangkit Tenaga Listrik Kapasitas Daya Maksimum 5MV/mesin
                 </p>
                 <img src="{{ asset('images/close.png') }}" alt="Close" onclick="closeModal('modal3')" class="absolute top-4 right-4 w-6 cursor-pointer">
@@ -323,36 +647,36 @@
 
         <div id="modal4" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
-                <h3 class="font-bold text-xl mb-4">SERTIFIKAT KOMPETENSI PELAKSANA PEMBANGUNAN DAN PEMASANGAN
+                <h3 class="font-plus-jakarta-sertifikat mb-4">SERTIFIKAT KOMPETENSI PELAKSANA PEMBANGUNAN DAN PEMASANGAN
                 PEMANFAATAN TEGANGAN RENDAH & TEGANGAN MENENGAH</h3>
-                <p>(KEMENTRIAN ENERGI & SUMBER DAYA MINERAL REPULIK INDONESIA)</p>
-                <h3 class="font-bold text-xl mb-4">RINCIAN UNIT KOMPETENSI INTI TEGANGAN RENDAH & TEGANGAN MENENGAH</h3>
+                <p class="font-jakarta-sertif-card">(KEMENTRIAN ENERGI & SUMBER DAYA MINERAL REPULIK INDONESIA)</p>
+                <h3 class="font-plus-jakarta-sertifikat mb-4">RINCIAN UNIT KOMPETENSI INTI TEGANGAN RENDAH & TEGANGAN MENENGAH</h3>
                     <ul class="list-none pl-0">
                         <li class="relative flex justify-between items-center pl-6">
-                            <span class="absolute left-0">•</span>
-                            <span class="ml-8">Pembangunan  & pemasangan komponen & Sirikit Instalasi pemanfaatan Tenaga Listrik</span>
-                            <span class="ml-auto">(X.35.XXX.00.XXX.X)</span>
+                            <span class="font-jakarta-sertif-card absolute left-0">•</span>
+                            <span class="font-jakarta-sertif-card" ml-0>Pembangunan  & pemasangan komponen & Sirikit Instalasi pemanfaatan Tenaga Listrik</span>
+                            <span class="font-jakarta-sertif-card ml-auto">(X.35.XXX.00.XXX.X)</span>
                         </li>
                     </ul>
                     <ul class="list-none pl-0">
                         <li class="relative flex justify-between items-center pl-6">
-                            <span class="absolute left-0">•</span>
-                            <span class="ml-8">Pembangunan & pemasangan komponen & sirikit Gardu Distribusi untuk Instalasi pemanfaatan Tenaga Listrik</span>
-                            <span class="ml-auto"> (X.X5.1XX.02.XXX.X)</span>
+                            <span class="font-jakarta-sertif-card absolute left-0">•</span>
+                            <span class="font-jakarta-sertif-card ml-0">Pembangunan & pemasangan komponen & sirikit Gardu Distribusi untuk Instalasi pemanfaatan Tenaga Listrik</span>
+                            <span class="font-jakarta-sertif-card ml-auto"> (X.X5.1XX.02.XXX.X)</span>
                         </li>
                     </ul>
                     <ul class="list-none pl-0">
                         <li class="relative flex justify-between items-center pl-6">
-                            <span class="absolute left-0">•</span>
-                            <span class="ml-8">Pemeriksaan & Pengujian Komponen & Sirkit Instalasi Pemanfaatan Tenaga Listrik</span>
-                            <span class="ml-auto">(X.XX.X4X.XX.X0X.1)</span>
+                            <span class="font-jakarta-sertif-card absolute left-0">•</span>
+                            <span class="font-jakarta-sertif-card ml-0">Pemeriksaan & Pengujian Komponen & Sirkit Instalasi Pemanfaatan Tenaga Listrik</span>
+                            <span class="font-jakarta-sertif-card ml-auto">(X.XX.X4X.XX.X0X.1)</span>
                         </li>
                     </ul>
                     <ul class="list-none pl-0">
                         <li class="relative flex justify-between items-center pl-6">
-                            <span class="absolute left-0">•</span>
-                            <span class="ml-8">Pemeriksaan & Pengujian Komponen & Sirkit Gardu Distribusi untuk Instalasi Pemanfaatan Tenaga Listrik</span>
-                            <span class="ml-auto">(X.X5.1XX.XX.01X.X)</span>
+                            <span class="font-jakarta-sertif-card absolute left-0">•</span>
+                            <span class="font-jakarta-sertif-card ml-0">Pemeriksaan & Pengujian Komponen & Sirkit Gardu Distribusi untuk Instalasi Pemanfaatan Tenaga Listrik</span>
+                            <span class="font-jakarta-sertif-card ml-auto">(X.X5.1XX.XX.01X.X)</span>
                         </li>
                     </ul>
 
@@ -362,34 +686,34 @@
 
         <div id="modal5" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
-                <h3 class="font-bold text-xl mb-4">SERTIFIKAT KOMPETENSI</h3>
-                <h3 class="font-bold text-xl mb-4">MANAJEMEN ENERGI</h3>
-                <h3 class="text-xl mb-4">Kualifikasi Manajer Bangunan Gedung</h3>
-                    <p style="position: relative; padding-left: 30px;">
+                <h3 class="font-plus-jakarta-sertifikat mb-4">SERTIFIKAT KOMPETENSI</h3>
+                <h3 class="font-semi-jakarta mb-4">MANAJEMEN ENERGI</h3>
+                <h4 class="font-semi-jakarta mb-4">Kualifikasi Manajer Bangunan Gedung</h4>
+                    <p class="font-jakarta-miring" style="position: relative; padding-left: 30px;">
                         <span style="position: absolute; left: 0; top: 0;">1.</span>AWADH
                     </p>
-                <h3 class="font-bold text-xl mb-4">KOMPETENSI</h3>
-                    <p style="position: relative; padding-left: 20px;">
+                <h3 class="font-plus-jakarta-sertifikat mb-4">KOMPETENSI</h3>
+                    <p class="font-jakarta-kecil" style="position: relative; padding-left: 20px;">
                         <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
                         Menerapkan prinsip-prinsip Penghematan Energi di Bangunan Gedung
                     </p>
-                    <p style="position: relative; padding-left: 20px;">
+                    <p class="font-jakarta-kecil" style="position: relative; padding-left: 20px;">
                         <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
                         Menyiapkan Kebijakan Energi Organisasi
                     </p>
-                    <p style="position: relative; padding-left: 20px;">
+                    <p class="font-jakarta-kecil" style="position: relative; padding-left: 20px;">
                         <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
                         Merencanakan Manajemen Energi
                     </p>
-                    <p style="position: relative; padding-left: 20px;">
+                    <p class="font-jakarta-kecil" style="position: relative; padding-left: 20px;">
                         <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
                         Melaksanakan Rencana Manajemen Emergi
                     </p>
-                    <p style="position: relative; padding-left: 20px;">
+                    <p class="font-jakarta-kecil" style="position: relative; padding-left: 20px;">
                         <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
                         Mengevaluasi Manajemen Energi
                     </p>
-                    <p style="position: relative; padding-left: 20px;">
+                    <p class="font-jakarta-kecil" style="position: relative; padding-left: 20px;">
                         <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
                         Melaksanakan Tinjauan Manajemen
                     </p>
@@ -399,14 +723,14 @@
 
         <div id="modal6" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <div class="bg-[#414141] p-8 rounded-lg w-1/2 relative">
-            <h3 class="font-bold text-xl mb-4">SERTIFIKAT AHLI K3</h3>
-                <p style="position: relative; padding-left: 20px;">
+            <h3 class="font-plus-jakarta-sertifikat mb-4">SERTIFIKAT AHLI K3</h3>
+                <p class="font-jakarta-sertif-card" style="position: relative; padding-left: 20px;">
                     <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
                     Ahli K3 Spesialis Bidang Listrik
                     <br>
                     <span style="display: block; margin-top: 5px;">Nomor X/0XXX9/AX.XX.X4/XXX/2XXX</span>
                 </p>
-                <p style="position: relative; padding-left: 20px;">
+                <p class="font-jakarta-sertif-card" style="position: relative; padding-left: 20px;">
                     <span style="position: absolute; left: 0; top: 0;">&#8226;</span>
                     Ahli K3 Umum
                     <br>
@@ -420,16 +744,6 @@
     <!-- SECTION VISI & MISI -->
     <section class="visi bg-contain bg-center bg-no-repeat" style="background-image: url('{{ asset('images/about/bglogoabout.png') }}');">
 
-        <!-- resources/views/visi-misi.blade.php -->
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visi & Misi - Perusahaan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    @vite('resources/css/app.css')
-</head>
 <body class="bg-black text-white font-sans">
     <div class="container mx-auto px-4 py-12 max-w-7xl">
         <!-- Header Section -->
@@ -441,13 +755,12 @@
             </h1>
             
             <div class="mb-16">
-                <h2 class="text-xl font-semibold mb-2 text-white">Visi :</h2>
-                <p class="text-lg leading-relaxed text-white">
-                    Menjadi Perusahaan Kebanggaan Nasional Yang Utama, Unggul, Terkemuka & Terdepan Dalam Layanan Serta Kinerja
-                    Dengan Selalu Memberikan Solusi Yang Inovatif Sehingga Setiap Mitra Kami Akan Selalu Puas Dengan Pelayanan Jasa Yang
-                    Kami Berikan.
-                </p>
-            </div>
+    <p class="text-lg leading-relaxed text-white">
+        <span class="font-semi-visi">Visi:</span> Menjadi Perusahaan Kebanggaan Nasional Yang Utama, Unggul, Terkemuka & Terdepan Dalam Layanan Serta Kinerja
+        Dengan Selalu Memberikan Solusi Yang Inovatif Sehingga Setiap Mitra Kami Akan Selalu Puas Dengan Pelayanan Jasa Yang Kami Berikan.
+    </p>
+</div>
+
             
             <h2 class="text-xl font-semibold mb-6 text-white">Misi :</h2>
         </header>
@@ -619,11 +932,11 @@
                 </div>
                 
                 <!-- Logo in bottom right -->
-                <div class="absolute bottom-8 right-8 z-10">
+                <!-- <div class="absolute bottom-8 right-8 z-10">
                     <div class="w-12 h-12 rounded-full bg-black border-2 border-yellow-600 flex items-center justify-center">
                         <span class="text-yellow-600 text-xs font-bold">RKG</span>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         

@@ -1,16 +1,24 @@
 @extends('layouts.app')
 
+@section('style')
+<style>
+    @media screen and (max-width: 768px) {
+      .hero img{
+        height: 200px;
+      }
+    }
+
+</style>
+
+@endsection
+
 @section('content')
 <section class="flex justify-center items-center min-h-screen bg-black py-10">
   <div class="w-full max-w-4xl bg-[#212121] rounded-lg shadow-lg overflow-hidden">
     <!-- Logo and Company Name -->
-    <div class="flex flex-col items-center py-6 px-4">
-      <div class="flex flex-col items-center">
-        <img src="{{ asset('images/company-logo.png') }}" alt="PT Amanullah Modis Mandiri" class="h-16 mb-2">
-        <div class="text-center">
-          <h2 class="text-lg font-semibold text-yellow-400">PT AMANULLAH MODIS MANDIRI</h2>
-          <p class="text-xs text-yellow-400">ONE STOP SOLUTION ELECTRICAL PARTNERS</p>
-        </div>
+    <div class="flex flex-col items-center py-2 px-4">
+      <div class="hero flex flex-col items-center">
+        <img src="{{ asset('images/LogoCareer.png') }}" alt="PT Amanullah Modis Mandiri" class="h-60 w-150">
       </div>
       <div class="w-full border-t border-yellow-400 my-4"></div>
       <h1 class="text-3xl font-bold text-white mb-6">Lets Join Us</h1>

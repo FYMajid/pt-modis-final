@@ -15,4 +15,12 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    // For development with Docker
+    server: {
+        host: "0.0.0.0",
+        port: 5173,
+        hmr: {
+            host: "localhost",
+        },
+    },
 });
