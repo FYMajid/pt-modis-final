@@ -83,7 +83,7 @@
     @forelse($hotNews as $index => $news)
         <div class="mb-10 mt-10">
             <h3 class="font-jakarta text-[35px] text-[#F3DB9F]">{{ $news->judul }}</h3>
-            <div class="flex flex-col md:flex-row gap-3 image-container">
+            <div class="pt-7 flex flex-col md:flex-row gap-3 image-container">
                 <div class="w-full md:w-1/2 image-assets">
                     <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->judul }}" class="w-[377px] h-[274px] object-cover">
                 </div>
@@ -134,7 +134,7 @@
         </div>
     </div>
 
-    <div class="absolute -bottom-130 left-0 w-full svg-image">
+    <div class="absolute -bottom-150 left-0 w-full svg-image">
         <img src="{{ asset('images/svg/newsFrame.svg') }}" alt="gambar svg" class="w-full h-full">
     </div>
 </div>

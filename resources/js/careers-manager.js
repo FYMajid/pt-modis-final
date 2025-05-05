@@ -65,6 +65,7 @@ export function careerManager() {
         },
 
         // Edit career opportunity
+        // Edit career opportunity
         async editCareer(id) {
             try {
                 const response = await fetch(`/admin/careers/${id}`, {
@@ -77,19 +78,29 @@ export function careerManager() {
                     },
                 });
 
-                // Check if response is JSON
                 const contentType = response.headers.get("content-type");
                 if (contentType && contentType.includes("application/json")) {
                     const data = await response.json();
 
                     if (response.ok) {
+                        // Menyalin data karir ke formData
                         this.formData = {
                             id: data.career.id,
                             position: data.career.position,
-                            description: data.career.description,
+                            description: data.career.description, // menambahkan deskripsi
                             link: data.career.link,
                         };
                         this.showEditModal = true;
+
+                        // Menggunakan $nextTick untuk memastikan Trix editor sudah ter-render
+                        this.$nextTick(() => {
+                            // Memasukkan konten deskripsi ke dalam Trix editor
+                            this.$refs.trixInput.value =
+                                this.formData.description;
+                            this.$refs.trixEditor.editor.loadHTML(
+                                this.formData.description
+                            ); // Set konten ke Trix editor
+                        });
                     } else {
                         notify(
                             data.message || "Failed to load career information",
@@ -97,7 +108,6 @@ export function careerManager() {
                         );
                     }
                 } else {
-                    // Handle non-JSON response
                     const text = await response.text();
                     console.error("Server returned non-JSON response:", text);
                     notify(
@@ -113,6 +123,8 @@ export function careerManager() {
 
         // Update career opportunity
         async updateCareer() {
+            this.formData.description = this.$refs.trixInput.value;
+
             try {
                 const response = await fetch(
                     `/admin/careers/${this.formData.id}`,
@@ -128,7 +140,6 @@ export function careerManager() {
                     }
                 );
 
-                // Check if response is JSON
                 const contentType = response.headers.get("content-type");
                 if (contentType && contentType.includes("application/json")) {
                     const data = await response.json();
@@ -140,7 +151,6 @@ export function careerManager() {
                         notify(data.message || "An error occurred", "error");
                     }
                 } else {
-                    // Handle non-JSON response
                     const text = await response.text();
                     console.error("Server returned non-JSON response:", text);
                     notify(

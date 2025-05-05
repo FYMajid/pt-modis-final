@@ -328,7 +328,7 @@
             </div>
             <!-- Main Content -->
             <div class="relative z-10 flex flex-col items-start justify-start h-full px-4 md:px-30">
-    <div class="text-left max-w-4xl mx-auto mt-30 ml-40 content-about"> <!-- Menambahkan margin-top dan margin-left -->
+    <div class="text-left max-w-4xl mx-auto mt-40 ml-20 content-about"> <!-- Menambahkan margin-top dan margin-left -->
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-plus-jakarta mb-6">
             PT Amanullah Modis Mandiri
         </h1>
@@ -435,12 +435,12 @@
                 </div>
 
                 <div class="bg-[#515151] p-6 rounded">
-                    <div class="mb-4">
+                    <div class="mb-8">
                         <h3 class="font-legalitas mb-1">No. Sertifikat</h3>
                         <p class="font-legalitas-number">0XX.P.XXX.M.XB.3XXX.XX0 dan XXX.X.216.M.XX.XXX4.XX0</p>
                     </div>
 
-                    <div class="grid grid-cols-2 mb-2">
+                    <div class="grid grid-cols-2 mb-8">
                         <div>
                             <h3 class="font-legalitas mb-1">No. Registrasi</h3>
                             <p class="font-legalitas-number" >XXX8.XX.XX0 dan X0XX.02.XXX</p>
@@ -469,7 +469,7 @@
                     </div>
                     <div>
                         <h3 class="font-legalitas mb-1">SK Kemenkumham</h3>
-                        <p class="font-legalitas-number">AHU-0007839.AH.01.11.TAHUN 2016</p>
+                        <p class="font-legalitas-number">AHU-0XXX8XX.XX.01.XXTAHUN XXXX</p>
                     </div>
 
                     <div>
@@ -478,52 +478,52 @@
                     </div>
                     <div>
                         <h3 class="font-legalitas mb-1">SK Kemenkumham</h3>
-                        <p class="font-legalitas-number">AHU-0003583.AH.01.11.TAHUN2019</p>
+                        <p class="font-legalitas-number">XXX-0XXX58X.XX.01.XXTAHUNXXXX</p>
                     </div>
 
                     <div>
                         <h3 class="font-legalitas mb-1">Ket. Domisili</h3>
-                        <p class="font-legalitas-number">152/27.1BU.1/31.74.04.1004/-071.562/e/2017</p>
+                        <p class="font-legalitas-number">XX2/X7.1XX.1/X1.74.XX.X00X/-0XX.5XX/X/XX17</p>
                     </div>
                     <div>
                         <h3 class="font-legalitas mb-1">NPWP</h3>
-                        <p class="font-legalitas-number">75.342.331.8-017.000</p>
+                        <p class="font-legalitas-number">7X.XX2.3XX.8-0XX.XX0</p>
                     </div>
 
                     <div>
                         <h3 class="font-legalitas mb-1">SP-PKP</h3>
-                        <p class="font-legalitas-number">S-503PKP/WPJ.30/KP.0703/2017</p>
+                        <p class="font-legalitas-number">S-XXXPKP/WXX.30/XX.0XX3/XXX7</p>
                     </div>
                     <div>
                         <h3 class="font-legalitas mb-1">SIUP</h3>
-                        <p class="font-legalitas-number">50/24.1PK/31.74.04/-1.824.27/e/2016</p>
+                        <p class="font-legalitas-number">XX/2X.XXX/3X.7X.XX/-1.XXX.27/X/XXXX</p>
                     </div>
 
                     <div>
                         <h3 class="font-legalitas mb-1">TDP</h3>
-                        <p class="font-legalitas-number">2717/24.3PT/31.74/-1.824.27/e/2016</p>
+                        <p class="font-legalitas-number">2XX7/24.XXX/XX.74/-1.XX4.XX/e/2XXX</p>
                     </div>
                     <div>
                         <h3 class="font-legalitas mb-1">SIUJK</h3>
-                        <p class="font-legalitas-number">258/C.31/31.74.04.1005.04.005.K.3/2/-1.728/2019</p>
+                        <p class="font-legalitas-number">2XX/C.XX/31.XX.XX.1XXX.XX.0XX.K.X/X/-1.7X8/2XXX</p>
                     </div>
 
                     <div>
                         <h3 class="font-legalitas mb-1">NIB</h3>
-                        <p class="font-legalitas-number">9120005380051BPJS</p>
+                        <p class="font-legalitas-number">91XXXX5XX00XXBXXS</p>
                     </div>
                     <div>
                         <h3 class="font-legalitas mb-1">IUJPTL</h3>
-                        <p class="font-legalitas-number">22/AB.4.1/31.74.04.1004.04.005.K3/2/-1.824.15/2020</p>
+                        <p class="font-legalitas-number">2X/XX.4.X/XX.7X.XX.XX04.X4.0XX.XX/2/-1.XXX.1X/2XXX</p>
                     </div>
 
                     <div>
                         <h3 class="font-legalitas mb-1">BPJS Kesehatan</h3>
-                        <p class="font-legalitas-number">80067736</p>
+                        <p class="font-legalitas-number">8XXX77XX</p>
                     </div>
                     <div>
                         <h3 class="font-legalitas mb-1">BPJS Tenaga Kerja</h3>
-                        <p class="font-legalitas-number">190000000740505</p>
+                        <p class="font-legalitas-number">19XXX00XX74XXXX</p>
                     </div>
                 </div>
             </div>
@@ -538,9 +538,9 @@
                 <h2 class="font-jakarta-semi">Sertifikasi & Kompetensi</h2>
 
             </div>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-2 gap-25">
                 <!-- Left Column -->
-                <div class="grid grid-rows-3 gap-4">
+                <div class="pl-10 grid grid-rows-3 gap-10">
                     <!-- Card 1 -->
                     <div class="bg-[#414141] p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal1')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">
@@ -558,7 +558,7 @@
                     </div> 
                 </div>
                 <!-- Right Column -->
-                <div class="grid grid-rows-3 gap-4">
+                <div class="pr-10 grid grid-rows-3 gap-10">
                     <!-- Card 4 -->
                     <div class="bg-[#414141] p-6 rounded-lg shadow-lg flex items-center cursor-pointer" onclick="openModal('modal4')">
                         <img src="{{ asset('images/VectorSertifikasi.png') }}" alt="Sertifikasi" class="w-16 mr-4">

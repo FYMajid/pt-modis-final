@@ -103,7 +103,7 @@
 
         <!-- Navigation arrows -->
         <div class="absolute inset-x-0 top-1/2 flex justify-between items-center px-4 md:px-10 z-20 transform -translate-y-1/2">
-            <button class="text-yellow-500 hover:text-yellow-400 focus:outline-none" id="prevSlide">
+            <button class="cursor-pointer text-yellow-500 hover:text-yellow-400 focus:outline-none" id="prevSlide">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 md:h-12 md:w-12" fill="none" viewBox="0 0 24 24" stroke="url(#gradient1)">
                   <defs>
                     <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -114,7 +114,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                 </svg>
             </button>
-            <button class="text-yellow-500 hover:text-yellow-400 focus:outline-none" id="nextSlide">
+            <button class="cursor-pointer text-yellow-500 hover:text-yellow-400 focus:outline-none" id="nextSlide">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 md:h-12 md:w-12" fill="none" viewBox="0 0 24 24" stroke="url(#gradient1)">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>

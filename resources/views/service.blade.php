@@ -42,14 +42,12 @@
             }
 
             .teks-teknik p {
-            font-size: 16px !important; /* atau ukuran yang lebih sesuai */
+            font-size: 24px !important; /* atau ukuran yang lebih sesuai */
             }
 
             .jasa{
                 font-size: 20px;
             }
-        }
-
        
     </style>
 @endsection
@@ -86,20 +84,20 @@
     </section>
 
     <!-- Elektrikal & Mekanikal Section -->
-    <section class="min-h-[600px]"> <!-- Increased min-height here -->
+    <section class="min-h-[700px]"> <!-- Increased min-height here -->
     <div class="container mx-auto px-4 py-12">
         <!-- Header Section -->
-        <div class="mb-12">
+        <div class="pl-15 mb-12">
             <h1 class="font-dm text-white">Elektrikal <span class="text-[#F3DB9F]">&</span> Mekanikal</h1>
         </div>
 
         <!-- Services Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:px-16">
             <!-- Left Column -->
             <div>
                 <!-- Image -->
                 <div class="mb-6 rounded-lg overflow-hidden">
-                    <img src="{{ asset('images/elektrikal.png') }}" alt="Electrical Worker" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/elektrikal.png') }}" alt="Electrical Worker" class="w-full h-55 object-cover">
                 </div>
                 
                 <!-- Services List -->
@@ -137,7 +135,7 @@
             <div>
                 <!-- Image -->
                 <div class="mb-6 rounded-lg overflow-hidden">
-                    <img src="{{ asset('images/mekanikal.png') }}" alt="Electrical Panel" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/mekanikal.png') }}" alt="Electrical Panel" class="w-full h-55 object-cover">
                 </div>
                 
                 <!-- Services List -->
@@ -176,15 +174,15 @@
 
     <!-- teknik & rekayasa sipil -->
     <section >
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-25 py-8">
     <h1 class="font-jakarta-semi text-center">Teknik <span class="text-[#F3DB9F]">&</span> Rekayasa Sipil</h1>
         
         <div class="border border-[#C3AF82] rounded-lg overflow-hidden">
-            <div class="relative" style="height: 294px;">
+            <div class="relative" style="height: 320px;">
                 <!-- Background image with zoom out effect -->
                 <div class="teknik absolute inset-0 flex items-center justify-center bg-gray-900">
                     <img src="{{ asset('images/tekni&rekayasa.jpg') }}" alt="Civil Engineering Background" 
-                         class=" h-100%  object-fill -translate-y-20">
+                         class="w-full h-full  object-cover -translate-y-10">
                 </div>
                 
                 <!-- Dark overlay to improve text readability -->
@@ -192,15 +190,16 @@
                 
                 <!-- Text Content -->
                 <div class="teks-teknik absolute inset-0 flex items-center justify-center">
-                    <div class="px-8 md:px-16 lg:px-24 max-w-4xl">
-                        <p class="text-white text-center justify text-base md:text-[24px] leading-relaxed font-jakarta-b">
-                            Design Interior & Eksterior adalah bagian dari bisnis kami. Variasi aplikasi desain
-                            merupakan dasar kami dalam pengembangan konsep desain di setiap proyek yang kami
-                            kerjakan dengan karakteristik yang khas. Impresi Inovasi & kreasi konsep desain adalah
-                            satu proses tahapan pengembangan yang bernilai demi terciptanya sebuah karya.
-                        </p>
-                    </div>
-                </div>
+    <div class="px-8 max-w-6xl">
+    <p class="text-white text-center leading-relaxed font-jakarta-500">
+        Design Interior & Eksterior adalah bagian dari bisnis kami. Variasi aplikasi desain
+        merupakan dasar kami dalam pengembangan konsep desain di setiap proyek yang kami
+        kerjakan dengan karakteristik yang khas. Impresi Inovasi & kreasi konsep desain adalah
+        satu proses tahapan pengembangan yang bernilai demi terciptanya sebuah karya.
+    </p>
+    </div>
+</div>
+
             </div>
         </div>
     </div>

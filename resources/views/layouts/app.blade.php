@@ -8,9 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
 
+    <link  rel="icon" href="{{ asset('images/logoAbout.png') }}" type="image/png">
     @vite('resources/css/app.css')
-    <title>{{$title}}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     
     @yield('style')
 </head>

@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <!-- Dynamic Title -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link  rel="icon" href="{{ asset('images/logoAbout.png') }}" type="image/png">
+
     <title>@yield('title', 'Dashboard Admin')</title>
     <!-- Vite Assets -->
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/news-manager.js'])
+    <!-- Trix Editor -->
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+<script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+
 </head>
 <body class="bg-gray-50 font-[DM Sans]">
     <!-- Header Section -->
@@ -21,8 +27,6 @@
             </form>
         </div>
     </div>
-
-
 
     <!-- Content Section -->
     <div class="p-6">

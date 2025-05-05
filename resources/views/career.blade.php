@@ -55,7 +55,7 @@
         <div class="mb-6">
           <h3 class="font-bold text-lg mb-2">Deskripsi Pekerjaan</h3>
           <div class="text-sm whitespace-pre-line">
-            {!! nl2br(e($career->description)) !!}
+          {!! $career->description !!}
           </div>
         </div>
 
