@@ -289,9 +289,8 @@ $careers = \App\Models\Career::orderBy('created_at', 'desc')->get();
     </div>
 </div>
 
-<!-- carrier start -->
-
-<div x-data="careerManager()">
+<!-- Career Management Section -->
+<div x-data="careerManager()" x-init="init">
     <!-- Header -->
     <div class="bg-slate-800 text-white p-4 flex justify-between items-center">
         <h1 class="text-3xl font-bold">Career Opportunities Management</h1>
@@ -324,9 +323,9 @@ $careers = \App\Models\Career::orderBy('created_at', 'desc')->get();
                         {{ $career->position }}
                     </td>
                     <td class="py-4 px-6 border border-gray-300">
-                    <div class="text-sm prose max-w-none">
-  {!! $career->description !!}
-</div>
+                        <div class="text-sm prose max-w-none">
+                            {!! $career->description !!}
+                        </div>
                     </td>
                     <td class="py-4 px-6 border border-gray-300">
                         <a href="{{ $career->link }}" target="_blank" class="text-blue-600 hover:underline">Link</a>
@@ -357,7 +356,7 @@ $careers = \App\Models\Career::orderBy('created_at', 'desc')->get();
 
     <!-- Add Career Modal -->
     <div x-show="showModal" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center" x-transition>
-        <div class="relative bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4" @click.away="showModal = true">
+        <div class="relative bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4" @click.away="showModal = false">
             <div class="flex justify-between items-center p-5 border-b">
                 <h3 class="text-xl font-semibold text-gray-900">Add Career Opportunity</h3>
                 <button type="button" @click="showModal = false" class="text-gray-400 hover:text-gray-500">
@@ -367,7 +366,7 @@ $careers = \App\Models\Career::orderBy('created_at', 'desc')->get();
                 </button>
             </div>
             <div class="p-6">
-                <form id="uploadForm" @submit.prevent="uploadCareer()">
+                <form id="uploadCareerForm" @submit.prevent="uploadCareer()">
                     @csrf
                     <div class="mb-4">
                         <label for="position" class="block text-gray-700 font-bold mb-2">Position</label>
@@ -375,8 +374,8 @@ $careers = \App\Models\Career::orderBy('created_at', 'desc')->get();
                     </div>
                     <div class="mb-4">
                         <label for="description" class="block text-gray-700 font-bold mb-2">Description</label>
-                        <trix-editor input="description" class="trix-content border border-gray-300 rounded px-3 py-2" x-model="formData.description"></trix-editor>
-                        <input id="description" type="hidden"  rows="4" class="w-full px-3 py-2 border border-gray-300 rounded" required></input>
+                        <input id="description" type="hidden" name="description" x-model="formData.description" x-ref="trixInput">
+                        <trix-editor input="description" x-ref="trixEditor" class="trix-content border border-gray-300 rounded"></trix-editor>
                     </div>
                     <div class="mb-4">
                         <label for="link" class="block text-gray-700 font-bold mb-2">Application Link</label>
@@ -396,42 +395,43 @@ $careers = \App\Models\Career::orderBy('created_at', 'desc')->get();
         </div>
     </div>
 
-  <!-- Edit Career Modal -->
-<div x-show="showEditModal" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center" x-transition>
-    <div class="relative bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4" @click.away="showEditModal = true">
-        <div class="flex justify-between items-center p-5 border-b">
-            <h3 class="text-xl font-semibold text-gray-900">Edit Career Opportunity</h3>
-            <button type="button" @click="showEditModal = false" class="text-gray-400 hover:text-gray-500">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
-        <div class="p-6">
-            <form id="editForm" @submit.prevent="updateCareer()">
-                @csrf
-                <div class="mb-4">
-                    <label for="edit_position" class="block text-gray-700 font-bold mb-2">Position</label>
-                    <input type="text" id="edit_position" x-model="formData.position" class="w-full px-3 py-2 border border-gray-300 rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label for="description" class="block text-gray-700 font-bold mb-2">Deskripsi</label>
-                    <trix-editor input="description" class="trix-content border border-gray-300 rounded px-3 py-2" x-ref="trixEditor"></trix-editor>
-                    <input id="description" type="hidden" name="description" x-ref="trixInput" required>
-                </div>
-                <div class="mb-4">
-                    <label for="edit_link" class="block text-gray-700 font-bold mb-2">Application Link</label>
-                    <input type="url" id="edit_link" x-model="formData.link" class="w-full px-3 py-2 border border-gray-300 rounded" required>
-                </div>
-                <div class="flex justify-end pt-4">
-                    <button type="button" @click="showEditModal = false" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2">
-                        Cancel
-                    </button>
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                        Update
-                    </button>
-                </div>
-            </form>
+    <!-- Edit Career Modal -->
+    <div x-show="showEditModal" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center" x-transition>
+        <div class="relative bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4" @click.away="showEditModal = false">
+            <div class="flex justify-between items-center p-5 border-b">
+                <h3 class="text-xl font-semibold text-gray-900">Edit Career Opportunity</h3>
+                <button type="button" @click="showEditModal = false" class="text-gray-400 hover:text-gray-500">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="p-6">
+                <form id="editCareerForm" @submit.prevent="updateCareer()">
+                    @csrf
+                    <div class="mb-4">
+                        <label for="edit_position" class="block text-gray-700 font-bold mb-2">Position</label>
+                        <input type="text" id="edit_position" x-model="formData.position" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="edit_description" class="block text-gray-700 font-bold mb-2">Description</label>
+                        <input id="edit_description" type="hidden" name="description" x-model="formData.description" x-ref="trixInput">
+                        <trix-editor input="edit_description" x-ref="trixEditor" class="trix-content border border-gray-300 rounded"></trix-editor>
+                    </div>
+                    <div class="mb-4">
+                        <label for="edit_link" class="block text-gray-700 font-bold mb-2">Application Link</label>
+                        <input type="url" id="edit_link" x-model="formData.link" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                    </div>
+                    <div class="flex justify-end pt-4">
+                        <button type="button" @click="showEditModal = false" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2">
+                            Cancel
+                        </button>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                            Update
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
