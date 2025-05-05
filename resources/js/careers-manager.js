@@ -11,6 +11,15 @@ export function careerManager() {
             link: "",
         },
 
+        init() {
+            this.$nextTick(() => {
+                const trixEditor = this.$refs.trixEditor;
+                trixEditor.addEventListener("trix-change", () => {
+                    this.formData.description = this.$refs.trixInput.value;
+                });
+            });
+        },
+
         // Reset form data
         resetForm() {
             this.formData = {
@@ -94,12 +103,19 @@ export function careerManager() {
 
                         // Menggunakan $nextTick untuk memastikan Trix editor sudah ter-render
                         this.$nextTick(() => {
-                            // Memasukkan konten deskripsi ke dalam Trix editor
+                            // Set isi input hidden
                             this.$refs.trixInput.value =
                                 this.formData.description;
+
+                            // Set isi editor Trix (dalam format HTML)
                             this.$refs.trixEditor.editor.loadHTML(
                                 this.formData.description
-                            ); // Set konten ke Trix editor
+                            );
+
+                            // Fokuskan kursor ke editor agar tidak perlu klik manual
+                            setTimeout(() => {
+                                this.$refs.trixEditor.focus();
+                            }, 100);
                         });
                     } else {
                         notify(
@@ -123,7 +139,7 @@ export function careerManager() {
 
         // Update career opportunity
         async updateCareer() {
-            this.formData.description = this.$refs.trixInput.value;
+            this.formData.description = this.$refs.trixEditor.innerHTML;
 
             try {
                 const response = await fetch(

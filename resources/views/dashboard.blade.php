@@ -211,43 +211,60 @@ $careers = \App\Models\Career::orderBy('created_at', 'desc')->get();
 
     <!-- Edit Modal -->
     <div x-show="showEditModal" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center" x-transition>
-    <div class="relative bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4">
-        <!-- 🛑 Hapus @click.away, karena menyebabkan masalah focus -->
-        <div class="flex justify-between items-center p-5 border-b">
-            <h3 class="text-xl font-semibold text-gray-900">Edit Career Opportunity</h3>
-            <button type="button" @click="showEditModal = false" class="text-gray-400 hover:text-gray-500">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
-        <div class="p-6">
-            <form id="editForm" @submit.prevent="updateCareer()">
-                @csrf
-                <div class="mb-4">
-                    <label for="edit_position" class="block text-gray-700 font-bold mb-2">Position</label>
-                    <input type="text" id="edit_position" x-model="formData.position" class="w-full px-3 py-2 border border-gray-300 rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label for="edit_description" class="block text-gray-700 font-bold mb-2">Description</label>
-                    <input id="edit_description" type="hidden" x-ref="trixInput" name="description" />
-                    <trix-editor input="edit_description" class="trix-content border border-gray-300 rounded px-3 py-2" x-ref="trixEditor"></trix-editor>
-                </div>
-                <div class="mb-4">
-                    <label for="edit_link" class="block text-gray-700 font-bold mb-2">Application Link</label>
-                    <input type="url" id="edit_link" x-model="formData.link" class="w-full px-3 py-2 border border-gray-300 rounded" required>
-                </div>
-                <div class="flex justify-end pt-4">
-                    <button type="button" @click="showEditModal = false" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2">
-                        Cancel
-                    </button>
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                        Update
+            <div class="relative bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4" @click.away="showEditModal = true">
+                <div class="flex justify-between items-center p-5 border-b">
+                    <h3 class="text-xl font-semibold text-gray-900">Edit News</h3>
+                    <button type="button" @click="showEditModal = false" class="text-gray-400 hover:text-gray-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                     </button>
                 </div>
-            </form>
+                <div class="p-6">
+                    <form id="editForm" @submit.prevent="updateNews()" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-4">
+                            <label for="edit_judul" class="block text-gray-700 font-bold mb-2">Judul Artikel</label>
+                            <input type="text" id="edit_judul" x-model="formData.judul" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="edit_image" class="block text-gray-700 font-bold mb-2">Image</label>
+                            <input type="file" id="edit_image" @change="handleFileChange($event)" class="w-full px-3 py-2 border border-gray-300 rounded">
+                            <p class="text-sm text-gray-500 mt-1">Leave empty to keep current image</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="edit_deskripsi" class="block text-gray-700 font-bold mb-2">Deskripsi</label>
+                            <textarea id="edit_deskripsi" x-model="formData.deskripsi" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded" required></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="edit_link" class="block text-gray-700 font-bold mb-2">Link</label>
+                            <input type="url" id="edit_link" x-model="formData.link" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-bold mb-2">Type</label>
+                            <div class="flex space-x-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" x-model="formData.type" value="hot" class="form-radio h-5 w-5 text-blue-600">
+                                    <span class="ml-2 text-gray-700">Hot News</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" x-model="formData.type" value="old" class="form-radio h-5 w-5 text-blue-600">
+                                    <span class="ml-2 text-gray-700">Old News</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex justify-end pt-4">
+                            <button type="button" @click="showEditModal = false" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2">
+                                Cancel
+                            </button>
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                                Update
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
 </div>
 
     <!-- Toast Notification -->
@@ -358,8 +375,8 @@ $careers = \App\Models\Career::orderBy('created_at', 'desc')->get();
                     </div>
                     <div class="mb-4">
                         <label for="description" class="block text-gray-700 font-bold mb-2">Description</label>
-                        <input id="description" type="hidden" x-model="formData.description" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded" required></textarea>
-                        <trix-editor input="description" class="trix-content border border-gray-300 rounded px-3 py-2"></trix-editor>
+                        <trix-editor input="description" class="trix-content border border-gray-300 rounded px-3 py-2" x-model="formData.description"></trix-editor>
+                        <input id="description" type="hidden"  rows="4" class="w-full px-3 py-2 border border-gray-300 rounded" required></input>
                     </div>
                     <div class="mb-4">
                         <label for="link" class="block text-gray-700 font-bold mb-2">Application Link</label>
@@ -379,45 +396,46 @@ $careers = \App\Models\Career::orderBy('created_at', 'desc')->get();
         </div>
     </div>
 
-    <!-- Edit Career Modal -->
-    <div x-show="showEditModal" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center" x-transition>
-        <div class="relative bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4" @click.away="showEditModal = true">
-            <div class="flex justify-between items-center p-5 border-b">
-                <h3 class="text-xl font-semibold text-gray-900">Edit Career Opportunity</h3>
-                <button type="button" @click="showEditModal = false" class="text-gray-400 hover:text-gray-500">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div class="p-6">
-                <form id="editForm" @submit.prevent="updateCareer()">
-                    @csrf
-                    <div class="mb-4">
-                        <label for="edit_position" class="block text-gray-700 font-bold mb-2">Position</label>
-                        <input type="text" id="edit_position" x-model="formData.position" class="w-full px-3 py-2 border border-gray-300 rounded" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="edit_description" class="block text-gray-700 font-bold mb-2">Description</label>
-                        <input id="edit_description" type="hidden" x-model="formData.description" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded" required></textarea>
-                        <trix-editor input="edit_description" class="trix-content border border-gray-300 rounded px-3 py-2"></trix-editor>
-                    </div>
-                    <div class="mb-4">
-                        <label for="edit_link" class="block text-gray-700 font-bold mb-2">Application Link</label>
-                        <input type="url" id="edit_link" x-model="formData.link" class="w-full px-3 py-2 border border-gray-300 rounded" required>
-                    </div>
-                    <div class="flex justify-end pt-4">
-                        <button type="button" @click="showEditModal = false" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2">
-                            Cancel
-                        </button>
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                            Update
-                        </button>
-                    </div>
-                </form>
-            </div>
+  <!-- Edit Career Modal -->
+<div x-show="showEditModal" class="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex items-center justify-center" x-transition>
+    <div class="relative bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4" @click.away="showEditModal = true">
+        <div class="flex justify-between items-center p-5 border-b">
+            <h3 class="text-xl font-semibold text-gray-900">Edit Career Opportunity</h3>
+            <button type="button" @click="showEditModal = false" class="text-gray-400 hover:text-gray-500">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="p-6">
+            <form id="editForm" @submit.prevent="updateCareer()">
+                @csrf
+                <div class="mb-4">
+                    <label for="edit_position" class="block text-gray-700 font-bold mb-2">Position</label>
+                    <input type="text" id="edit_position" x-model="formData.position" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="description" class="block text-gray-700 font-bold mb-2">Deskripsi</label>
+                    <trix-editor input="description" class="trix-content border border-gray-300 rounded px-3 py-2" x-ref="trixEditor"></trix-editor>
+                    <input id="description" type="hidden" name="description" x-ref="trixInput" required>
+                </div>
+                <div class="mb-4">
+                    <label for="edit_link" class="block text-gray-700 font-bold mb-2">Application Link</label>
+                    <input type="url" id="edit_link" x-model="formData.link" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                </div>
+                <div class="flex justify-end pt-4">
+                    <button type="button" @click="showEditModal = false" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2">
+                        Cancel
+                    </button>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                        Update
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
+
 
     <!-- Toast Notification -->
     <div 
